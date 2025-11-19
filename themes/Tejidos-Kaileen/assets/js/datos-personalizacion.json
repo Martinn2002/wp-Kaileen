@@ -1,0 +1,7 @@
+{
+  "materiales": [
+    { "nombre": "Amarillo", "imagen": "assets/img/amarillo.png", "valor": "0" },
+    { "nombre": "Verde", "imagen": "assets/img/verde.png", "valor": "0" },
+    { "nombre": "Azul", "imagen": "assets/img/azul.png", "valor": "0" }
+  ]
+}

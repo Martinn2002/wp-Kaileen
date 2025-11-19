@@ -1,0 +1,219 @@
+
+
+
+@mixin mixin-tarjeta-producto {
+  background: $color-blanco;
+  border-radius: 22px;
+  border: 1px solid $color-verde;
+  padding: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  max-width: 350px;
+  margin: auto;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 280px; 
+  
+  &:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  }
+
+  img{
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+    object-fit: cover;
+  }
+
+  
+.producto-nombre {
+  font-weight: 700;
+  color: $color-negro;
+  margin-bottom: 0.3rem;
+}
+
+.producto-meta {
+  margin-top: .8rem;
+}
+
+.producto-precio {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: $color-negro;
+  margin-bottom: .4rem; 
+}
+
+.producto-descripcion {
+  color: $color-negro;
+  font-size: 0.95rem;
+  margin-bottom: 0;
+  line-height: 1.4;
+}
+
+
+}
+
+@mixin mixin-tarjeta-comunidad{
+  background: $color-blanco;
+  border-radius: 22px;
+  overflow: hidden;
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 40px 0px;
+  img{
+    width: 100%;
+    height: auto;
+    border-radius: 0 !important;
+    object-fit: cover;
+  }
+  .comunidad-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.4rem 0.4rem;
+  }
+  .comunidad-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $color-negro;
+}
+.btn-compartir {
+  background: none;
+  border: 0;
+  color: $color-negro;
+  transition: color 0.3s ease;
+}
+
+.comunidad-usuario {
+  display: flex;
+  gap: 10px;
+  padding: 0 1.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.comunidad-usuario img {
+  width: 30px;
+  height: 30px;
+  border-radius: 10%;
+  object-fit: cover;
+}
+
+.comunidad-usuario span {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.comunidad-texto {
+  padding: 0 1.4rem;
+  font-size: 0.96rem;
+  color: $color-negro;
+  line-height: 1.45;
+}
+
+.comunidad-divisor {
+  border: none;
+  border-top: 1px solid $color-negro;
+  margin: 1.1rem 1.4rem;
+}
+
+.comunidad-input {
+  width: calc(100% - 2.8rem);
+  margin: 0 auto 1rem;
+  display: block;
+  padding: 0.8rem 1rem;
+  border-radius: 22px;
+  border: 2px solid $color-rosado;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.comentario {
+  display: flex;
+  gap: 12px;
+  padding: 10px 1.4rem;
+  margin-top: 0.2rem;
+}
+
+.comentario img {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.comentario p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: $color-negro;
+  line-height: 1.3;
+}
+
+
+}
+
+
+// Cada vez que se use un boton, tambien agregarle la clase p-grande por el texto del boton
+
+@mixin mixin-boton-verde {
+  background: $color-verde-chillon;
+  color: $color-negro;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  border-radius: 40px;
+  padding: 12px 67px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.37);
+}
+
+@mixin mixin-paginacion {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 18px; // separacion entre circulos
+
+  li {
+    display: flex;
+  }
+
+  a {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: $color-blanco;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: $color-negro;
+    font-size: 16px;
+    font-weight: 500;
+
+    img {
+      width: 14px;
+      height: 14px;
+    }
+
+    &.active {
+      background-color: #c8e37b; // tu verde
+    }
+  }
+}
+
+@mixin mixin-boton-carrusel-producto{
+  button{
+    background-color: $color-rosado !important;
+    border-radius: 100% !important;
+    height: 20px !important;
+    width: 20px !important;
+  }
+  bottom: -70px !important; 
+  gap: 20px;
+
+}
+
+
+@mixin mixin-input-personalizacion{
+  input:hover{
+    cursor: pointer;
+  }
+}

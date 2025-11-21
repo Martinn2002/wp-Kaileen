@@ -13,6 +13,58 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Syne:wght@400..800&display=swap" rel="stylesheet">
  </head>
+ <header>
+        <nav class="navbar py-2 border-bottom">
+            <div class="container-fluid d-flex flex-column align-items-center">
+                <div class="d-flex align-items-center justify-content-between w-100">
+                    <button class="btn btn-idioma">
+                        <i class="bi bi-translate fs-5"></i>
+                    </button>
+
+                    <a class="navbar-brand m-0" href="index.html">
+                        <img src="assets/img/logo-kaileen 1.png" alt="Logo">
+                    </a>
+
+                    <button class="navbar-toggler p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu">
+                        
+                        <i class="bi bi-list icono-menu "></i>
+                    </button>
+                </div>
+
+                <div class="w-100 mt-2 px-2">
+                    <div class="input-group">
+                        <input type="text" class="form-control buscar-menu" placeholder="Buscar productos...">
+                        <button class="btn btn-outline-secondary bs-border-radius-xxl buscador-boton" type="button">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="offcanvas offcanvas-end offcanvas-personalizado" tabindex="-1" id="offcanvasMenu">
+            <div class="offcanvas-header d-flex align-items-center justify-content-between">
+                <div class="top-menu ">
+                  <div>
+                    <i class="bi bi-person-circle icono-usuario"></i></div>
+                    <a href="#" class="enlace-login">Registrarse</a>
+                    <a href="#" class="enlace-login">Ingresar</a>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            <div class="offcanvas-body">
+                <ul class="menu-lista list-unstyled">
+                    <li><a href="#">Inicio <span></span></a></li>
+                    <li><a href="#">Modelos a personalizar <span></span></a></li>
+                    <li><a href="#">Disponibles <span></span></a></li>
+                    <li><a href="#">Carrito </a></li>
+                    <li><a href="#">Comunidad </a></li>
+                    <li><a href="#">Sobre Kaileen </a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
  <body>
   
  </body>

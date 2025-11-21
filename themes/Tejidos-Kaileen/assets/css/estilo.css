@@ -371,7 +371,30 @@ h2 + span {
 
 .btn-idioma {
   border: 0;
+  color: #171D07;
   background: transparent;
+}
+
+.icono-menu {
+  color: #171D07;
+  height: 500px;
+}
+
+.buscar-menu {
+  background-color: #fff;
+}
+
+.buscar-menu::-moz-placeholder {
+  color: #171D07;
+}
+
+.buscar-menu::placeholder {
+  color: #171D07;
+}
+
+.buscador-boton {
+  background-color: #C4E079;
+  color: #171D07;
 }
 
 /* ======== menu burger o Offcanvas ======== */
@@ -390,17 +413,27 @@ h2 + span {
 .icono-usuario {
   width: 30px;
   height: 30px;
+  color: #171D07;
+}
+
+.top-menu {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
 }
 
 .enlace-login {
   color: #171D07;
   text-decoration: none;
-  border-bottom: 1px solid #171D07;
   transition: opacity 0.2s ease;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .enlace-login:hover {
-  opacity: 0.8;
+  background-color: #C4E079;
 }
 
 /* ======== CUERPO OFF-CANVAS ======== */
@@ -436,12 +469,17 @@ h2 + span {
   align-items: center;
   color: #171D07;
   text-decoration: none;
-  padding: 8px 0;
+  padding: 10px;
   transition: color 0.3s ease;
+  border-radius: 10px;
 }
 
 .menu-lista a:hover {
-  color: #171D07;
+  background-color: #C4E079;
+}
+
+.btn-close {
+  filter: invert(0);
 }
 
 /* =========================================================

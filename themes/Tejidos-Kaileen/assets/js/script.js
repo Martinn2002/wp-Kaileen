@@ -101,4 +101,5 @@ myModal.addEventListener('shown.bs.modal', () => {
   myInput.focus()
 })
 
-
+const collapseElementList = document.querySelectorAll('.collapse')
+const collapseList = [...collapseElementList].map(collapseEl => new bootstrap.Collapse(collapseEl))

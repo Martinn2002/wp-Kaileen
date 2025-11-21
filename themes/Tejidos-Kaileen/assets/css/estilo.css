@@ -774,24 +774,27 @@ h2 + span {
     FOOTER
 ========================================================= */
 footer {
-  margin-top: 100px;
+  margin-top: 0;
+  padding: 0;
 }
 
 .footer-movil {
   background-color: #D1E0A9;
   color: #171D07;
-  padding: 20px 18px 50px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   text-align: left;
 }
 
+.main-footer {
+  padding: 20px 20px 0px 20px;
+}
+
 .footer-enlaces {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin-bottom: 10px;
 }
 
 .footer-enlaces a {
@@ -799,36 +802,30 @@ footer {
   color: #171D07;
   display: block;
   padding-bottom: 6px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   transition: color 0.3s ease;
 }
 
-.footer-enlaces a:hover {
-  color: #171D07;
+.enlace {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px;
 }
 
-.footer-faq {
+.card {
+  background-color: #c8dc7c;
+  color: black;
+}
+
+.p-frecuentes {
+  padding: 10px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  padding-bottom: 6px;
-}
-
-.footer-faq a {
-  text-decoration: none;
-  color: #171D07;
 }
 
 .faq-icono {
   font-size: 20px;
   font-weight: 500;
-}
-
-.footer-divisor {
-  border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  margin: 14px 0;
+  padding-left: 16rem;
 }
 
 /* Logos e iconos */
@@ -836,22 +833,18 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px;
 }
 
 .footer-logo {
-  height: 40px;
+  height: 20%;
   width: auto;
+  margin: 20px 0px;
 }
 
-.footer-social img {
-  width: 26px;
-  height: 26px;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-}
-
-.footer-social img:hover {
-  opacity: 1;
+.redsocial {
+  height: 40%;
+  color: black;
 }
 
 /* ======== FRANJA INFERIOR VERDE  ======== */
@@ -859,8 +852,9 @@ footer {
   width: 100%;
   background-color: #c8dc7c;
   text-align: center;
-  padding: 8px 0;
-  margin: 0;
+  height: 30px;
+  padding: 5px;
+  justify-content: end;
 }
 
 @media (min-width: 768px) {

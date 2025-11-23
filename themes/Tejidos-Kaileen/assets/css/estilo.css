@@ -308,11 +308,11 @@ h1, h2, h3 {
 }
 
 p, a {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", sans-serif !important;
 }
 
 h2, h3 {
-  font-weight: 500;
+  font-weight: 500 !important;
 }
 
 h1 {
@@ -324,7 +324,7 @@ h2 {
   font-size: 32px;
 }
 
-h3 {
+h3, th, td {
   font-size: 24px;
 }
 
@@ -333,9 +333,9 @@ h3 {
   font-size: 20px;
 }
 
-.p-mediano {
-  font-family: "Inter", sans-serif;
-  font-size: 16px;
+.p-mediano, h5 {
+  font-family: "Inter", sans-serif !important;
+  font-size: 16px !important;
 }
 
 .p-pequeno {
@@ -547,6 +547,10 @@ h2 + span {
   border-bottom-left-radius: 3px;
 }
 
+.titulo-seccion-pagina {
+  margin-top: 0px;
+}
+
 /* =========================================================
     SECCIÓN DE PASOS
 ========================================================= */
@@ -675,7 +679,7 @@ h2 + span {
 }
 .tarjeta-producto img {
   width: 100%;
-  height: auto;
+  height: 300px;
   border-radius: 14px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -708,6 +712,39 @@ h2 + span {
   max-height: 350px;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+.galeria-producto img {
+  max-height: 350px !important;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.yith_wapo_groups_container > h5,
+.yith_wapo_groups_container > p {
+  display: none !important;
+}
+
+.options-container {
+  background-color: #F2F0E4;
+}
+
+select {
+  background-color: #fff;
+  border: 2px solid #EF9AB9;
+  border-radius: 22px;
+}
+select option {
+  padding-left: 10%;
+}
+
+.woocommerce-product-gallery__trigger {
+  display: none;
+}
+
+.yith-wapo-option-value {
+  height: 30px;
+  padding-left: 20px;
 }
 
 /* =========================================================
@@ -863,7 +900,7 @@ footer {
 .faq-icono {
   font-size: 20px;
   font-weight: 500;
-  padding-left: 16rem;
+  padding-left: 8rem;
 }
 
 /* Logos e iconos */
@@ -1111,6 +1148,23 @@ footer {
   margin-left: 22%;
 }
 
+.btn-volver img {
+  width: 20px;
+  height: 20px;
+}
+
+.addon-header, #wapo-total-price-table, .yith-wapo-block {
+  background-color: #F2F0E4 !important;
+}
+.addon-header h1, .addon-header h2, .addon-header h3, .addon-header h4, .addon-header h5, .addon-header h6, .addon-header p, #wapo-total-price-table h1, #wapo-total-price-table h2, #wapo-total-price-table h3, #wapo-total-price-table h4, #wapo-total-price-table h5, #wapo-total-price-table h6, #wapo-total-price-table p, .yith-wapo-block h1, .yith-wapo-block h2, .yith-wapo-block h3, .yith-wapo-block h4, .yith-wapo-block h5, .yith-wapo-block h6, .yith-wapo-block p {
+  background-color: #F2F0E4 !important;
+}
+
+.woocommerce-product-gallery .flex-control-thumbs,
+.woocommerce-product-gallery__image--thumbnail {
+  display: none !important;
+}
+
 /* =========================================================
     SECCIÓN MATERIALIZA TUS IDEAS (PC)
 ========================================================= */
@@ -1135,15 +1189,10 @@ footer {
   }
   #carouselPrendas img {
     border-radius: 14px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
     width: 100%;
     height: auto;
     -o-object-fit: cover;
        object-fit: cover;
-  }
-  #carouselPrendas img:hover {
-    transform: scale(1.05);
   }
   .carousel-control-prev-icon,
   .carousel-control-next-icon {
@@ -1275,8 +1324,8 @@ footer {
     padding: 12px;
   }
   .container {
-    padding-left: 35px !important;
-    padding-right: 35px !important;
+    padding-left: 32px !important;
+    padding-right: 32px !important;
   }
 }
 /* =========================================================

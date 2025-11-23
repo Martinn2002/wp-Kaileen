@@ -193,6 +193,10 @@ h2 + span {
   border-bottom-left-radius: 3px;
 }
 
+.titulo-seccion-pagina{
+    margin-top: 0px;
+  }
+
 /* =========================================================
     SECCIÓN DE PASOS
 ========================================================= */
@@ -316,6 +320,40 @@ h2 + span {
   object-fit: contain;
 }
 
+.galeria-producto{
+  img{
+    max-height: 350px !important;
+    object-fit: cover;
+  }
+}
+
+.yith_wapo_groups_container > h5,
+.yith_wapo_groups_container > p {
+    display: none !important;
+}
+
+.options-container{
+  background-color: $color-background;
+}
+
+select{
+  background-color: $color-blanco;
+  border: 2px solid $color-rosado;
+  border-radius: 22px;
+  option{
+    padding-left: 10%;
+  }
+}
+
+.woocommerce-product-gallery__trigger{
+  display: none;
+}
+
+.yith-wapo-option-value{
+  height: 30px;
+  padding-left: 20px;
+}
+
 /* =========================================================
     COMUNIDAD
 ========================================================= */
@@ -385,7 +423,7 @@ footer{
 .faq-icono {
   font-size: 20px;
   font-weight: 500;
-  padding-left: 16rem;
+  padding-left: 8rem;
 }
 
 
@@ -660,6 +698,28 @@ footer{
     margin-left: 22%;
 }
 
+.btn-volver{
+  img{
+  width: 20px;
+  height: 20px;    
+  }
+}
+
+.addon-header, #wapo-total-price-table, .yith-wapo-block{
+  background-color: $color-background !important;
+  h1, h2, h3, h4, h5, h6, p{
+    background-color: $color-background !important;
+  }
+}
+
+
+
+
+
+    .woocommerce-product-gallery .flex-control-thumbs,
+    .woocommerce-product-gallery__image--thumbnail {
+        display: none !important;
+    }
 
 
 
@@ -698,17 +758,12 @@ footer{
 
 #carouselPrendas img {
   border-radius: 14px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
   width: 100%;
   height: auto;
   object-fit: cover;
 }
 
 
-#carouselPrendas img:hover {
-  transform: scale(1.05);
-}
 
 
 .carousel-control-prev-icon,
@@ -876,8 +931,8 @@ footer{
     padding: 12px;
   }
  .container{
-    padding-left: 35px !important;
-    padding-right: 35px !important;
+    padding-left: 32px !important;
+    padding-right: 32px !important;
   }
 }
 
@@ -898,6 +953,8 @@ footer{
     text-align: left;
     margin-left: 0;
   }
+
+  
 
   .titulo-seccion::before {
     left: 0; 

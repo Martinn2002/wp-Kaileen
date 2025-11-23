@@ -1,89 +1,8 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tejidos Kaileen</title>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-
-  <link rel="stylesheet" href="assets/css/estilo.css">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Syne:wght@400..800&display=swap" rel="stylesheet">
-</head>
-
-<body>
-
-<header>
-  <nav class="navbar py-2 border-bottom">
-  <div class="container-fluid d-flex flex-column align-items-center">
-
-    
-    <div class="d-flex align-items-center justify-content-between w-100">
-    
-      <button class="btn btn-idioma">
-        <i class="bi bi-translate fs-5"></i>
-      </button>
-
-      
-      <a class="navbar-brand m-0" href="#">
-        <img src="assets/img/logo-kaileen 1.png" alt="Logo">
-      </a>
-
-      
-      <button class="navbar-toggler p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-
-    
-    <div class="w-100 mt-2 px-2">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Buscar productos...">
-        <button class="btn btn-outline-secondary" type="button"><i class="bi bi-search"></i></button>
-      </div>
-    </div>
-
-  </div>
-</nav>
-
-
-
-<div class="offcanvas offcanvas-end offcanvas-personalizado" tabindex="-1" id="offcanvasMenu">
-  <div>
-      <button type="button" class="btn-close align-items-end" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-header d-flex align-items-center justify-content-between">
-      <a href="#" class="enlace-login">Registrarse / Login</a>
-      <img src="assets/img/iconos/Usuario.png" alt="Usuario" class="icono-usuario">
-  </div>
-
-  <div class="offcanvas-body">
-    <h5 class="menu-titulo mb-3">Navegación</h5>
-    <ul class="menu-lista list-unstyled">
-      <li><a href="#">Inicio <span></a></li>
-      <li><a href="#">Tienda <span></a></li>
-      <li><a href="#">Categorías <span></a></li>
-      <li><a href="#">Nosotros <span></a></li>
-      <li><a href="#">Contacto <span></a></li>
-    </ul>
-
-    <h5 class="menu-seccion mt-4">Catálogo</h5>
-    <ul class="menu-lista list-unstyled">
-      <li><a href="#">Modelos a personalizar</a></li>
-      <li><a href="#">Disponibles </a></li>
-    </ul>
-  </div>
-</div>
-
-</header>
+<?php get_header(); ?>
 
   <div class="header-hero">
-    <img src="assets/img/hero img.png" alt="">
+    <img src="<?php echo get_template_directory_uri() . '/assets/img/banner.png'; ?>" alt="">
   </div>
 
   <div class="promo-cinta">
@@ -109,7 +28,7 @@
     <div class="carousel-item active">
       <div class="row justify-content-center">
         <div class="col-4 col-md-4">
-          <img src="assets/img/chaleco-carrusel.png" class="img-fluid d-block w-100" alt="Prenda 1">
+          <img src="<?php echo get_template_directory_uri() . '/assets/img/perso-banner-1.png'?>" class="img-fluid d-block w-100" alt="Prenda 1">
         </div>
         <div class="col-4 col-md-4">
           <img src="assets/img/chaleco-carrusel.png" class="img-fluid d-block w-100" alt="Prenda 2">
@@ -204,7 +123,7 @@
 
 </section>
     <div class="text-center mb-3">
-      <a href="#" class="btn btn-principal p-grande">Ver Catálogo</a>
+      <a href="<?php echo get_term_link('Modelo', 'product_cat'); ?>" class="btn btn-principal p-grande">Ver Catálogo</a>
     </div>
 
     </div>
@@ -213,120 +132,91 @@
     <section class="info-franja">
       <div class="container justify-content-around">
       <div class="row">
-        <div class="col-4"><img class="iconos-franja" src="assets/img/iconos/caja-aprobada.png" alt=""><p class="p-mediano">Envío Gratis</p></div>
-        <div class="col-4"><img class="iconos-franja" src="assets/img/iconos/tipos-de-pago.png" alt=""><p class="p-mediano">Diferentes Metodos De Pago</p></div>
-        <div class="col-4"><img class="iconos-franja" src="assets/img/iconos/sweater.png" alt=""><p class="p-mediano">Diseño Personalizado</p></div>
+        <div class="col-4"><img class="iconos-franja" src="<?php echo get_template_directory_uri() . '/assets/img/iconos/caja-aprobada.png'?>" alt=""><p class="p-mediano">Envío Gratis</p></div>
+        <div class="col-4"><img class="iconos-franja" src="<?php echo get_template_directory_uri() . '/assets/img/iconos/tipos-de-pago.png' ?>" alt=""><p class="p-mediano">Diferentes Metodos De Pago</p></div>
+        <div class="col-4"><img class="iconos-franja" src="<?php echo get_template_directory_uri() . '/assets/img/iconos/sweater.png' ?>" alt=""><p class="p-mediano">Diseño Personalizado</p></div>
       </div>
       </div>
     </section>
 
+
+<!-- Aqui para cargar los productos del woocommerce -->
+
     <div class="container">
     <h2 class="titulo-seccion">Disponibles</h2>
     <h3>Diseños disponibles para entrega inmediata</h3>
-
-
 <div id="carouselProductos" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
+<div class="carousel-inner">
 
-    <div class="carousel-item active">
-      <div class="row justify-content-center">
-        <div class="col-10 col-md-4">
-          <div class="tarjeta-producto">
-            <img src="assets/img/Rectangle 18563.png" alt="Producto 1">
-            <div class="producto-meta d-flex justify-content-between align-items-start">
-              <div class="producto-info">
-                <h3>Chaleco Tuticolores</h3>
-                <p class="p-grande">$25.000</p>
-                <p class="p-mediano">Chaleco tejido a mano en lana de oveja, elaborado con punto espiga que aporta textura y calidez. Una prenda única, suave y natura...</p>
-              </div>
-              <button class="btn-compartir"><img src="assets/img/iconos/compartir.png" alt=""></button>
+<?php
+$args = array(
+    'post_type'      => 'product',
+    'posts_per_page' => 9,
+    'product_cat'    => 'disponibles',
+    'orderby'        => 'date',
+    'order'          => 'DESC'
+);
+
+$loop = new WP_Query($args);
+
+if ($loop->have_posts()) :
+
+    $count = 0;
+
+    while ($loop->have_posts()) : $loop->the_post();
+        global $product;
+
+        // Abrir slide
+        if ($count % 3 == 0) {
+            echo '<div class="carousel-item ' . ($count == 0 ? 'active' : '') . '">
+                    <div class="row justify-content-center">';
+        }
+        ?>
+
+        <div class="col-10 col-md-4 <?php echo ($count % 3 != 0) ? 'd-none d-md-block' : ''; ?>">
+            <div class="tarjeta-producto">
+                <a href="<?php the_permalink(); ?>">
+                    <?php echo $product->get_image(); ?>
+                </a>
+
+                <div class="producto-meta d-flex justify-content-between align-items-start">
+                    <div class="producto-info">
+                        <h3><?php the_title(); ?></h3>
+                        <p class="p-grande"><?php echo $product->get_price_html(); ?></p>
+                        <p class="p-mediano"><?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?></p>
+                    </div>
+
+                    <button class="btn-compartir" data-url="<?php the_permalink(); ?>" data-title="<?php the_title(); ?>">
+                      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/iconos/compartir.png" alt="">
+                    </button>
+
+                </div>
             </div>
-          </div>
         </div>
 
-        <div class="col-10 col-md-4 d-none d-md-block">
-          <div class="tarjeta-producto">
-            <img src="assets/img/Rectangle 18563.png" alt="Producto 1">
-            <div class="producto-meta d-flex justify-content-between align-items-start">
-              <div class="producto-info">
-                <h3>Chaleco Tuticolores</h3>
-                <p class="p-grande">$25.000</p>
-                <p class="p-mediano">Chaleco tejido a mano en lana de oveja, elaborado con punto espiga que aporta textura y calidez. Una prenda única, suave y natura...</p>
-              </div>
-              <button class="btn-compartir"><img src="assets/img/iconos/compartir.png" alt=""></button>
+        <?php
+        $count++;
 
-            </div>
-          </div>
-        </div>
+        // Cerrar slide
+        if ($count % 3 == 0) {
+            echo '      </div>
+                  </div>';
+        }
 
-        <div class="col-10 col-md-4 d-none d-md-block">
-          <div class="tarjeta-producto">
-            <img src="assets/img/Rectangle 18563.png" alt="Producto 1">
-            <div class="producto-meta d-flex justify-content-between align-items-start">
-              <div class="producto-info">
-                <h3>Chaleco Tuticolores</h3>
-                <p class="p-grande">$25.000</p>
-                <p class="p-mediano">Chaleco tejido a mano en lana de oveja, elaborado con punto espiga que aporta textura y calidez. Una prenda única, suave y natura...</p>
-              </div>
-              <button class="btn-compartir"><img src="assets/img/iconos/compartir.png" alt=""></button>
+    endwhile;
 
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    // Cerrar slide si quedaron productos sueltos
+    if ($count % 3 != 0) {
+        echo '</div></div>';
+    }else{
+    echo '<p>No hay productos disponibles por ahora.</p>';
+    }endif;
 
-    
-    <div class="carousel-item">
-      <div class="row justify-content-center">
-        <div class="col-10 col-md-4">
-          <div class="tarjeta-producto">
-            <img src="assets/img/Rectangle 18563.png" alt="Producto 1">
-            <div class="producto-meta d-flex justify-content-between align-items-start">
-              <div class="producto-info">
-                <h3>Chaleco Tuticolores</h3>
-                <p class="p-grande">$25.000</p>
-                <p class="p-mediano">Chaleco tejido a mano en lana de oveja, elaborado con punto espiga que aporta textura y calidez. Una prenda única, suave y natura...</p>
-              </div>
-              <button class="btn-compartir"><img src="assets/img/iconos/compartir.png" alt=""></button>
+wp_reset_postdata();
+?>
 
-            </div>
-          </div>
-        </div>
+</div>
 
-        <div class="col-10 col-md-4 d-none d-md-block">
-          <div class="tarjeta-producto">
-            <img src="assets/img/Rectangle 18563.png" alt="Producto 1">
-            <div class="producto-meta d-flex justify-content-between align-items-start">
-              <div class="producto-info">
-                <h3>Chaleco Tuticolores</h3>
-                <p class="p-grande">$25.000</p>
-                <p class="p-mediano">Chaleco tejido a mano en lana de oveja, elaborado con punto espiga que aporta textura y calidez. Una prenda única, suave y natura...</p>
-              </div>
-              <button class="btn-compartir"><img src="assets/img/iconos/compartir.png" alt=""></button>
-
-            </div>
-          </div>
-        </div>
-
-        <div class="col-10 col-md-4 d-none d-md-block">
-          <div class="tarjeta-producto">
-            <img src="assets/img/Rectangle 18563.png" alt="Producto 1">
-            <div class="producto-meta d-flex justify-content-between align-items-start">
-              <div class="producto-info">
-                <h3>Chaleco Tuticolores</h3>
-                <p class="p-grande">$25.000</p>
-                <p class="p-mediano">Chaleco tejido a mano en lana de oveja, elaborado con punto espiga que aporta textura y calidez. Una prenda única, suave y natura...</p>
-              </div>
-              <button class="btn-compartir"><img src="assets/img/iconos/compartir.png" alt=""></button>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
 
   
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselProductos" data-bs-slide="prev">
@@ -408,48 +298,4 @@
 
 
 
-<footer class="footer-movil">
-  <div class="footer-enlaces">
-    <a href="#">Modelos a personalizar</a>
-    <a href="#">Disponibles</a>
-    <div class="footer-faq">
-      <a href="#">Preguntas Frecuentes</a>
-      <span class="faq-icono">+</span>
-    </div>
-  </div>
-
-  <hr class="footer-divisor">
-
-  <div class="footer-inferior">
-    <div class="footer-marca">
-      <img src="aileen-logo.svg" alt="Aileen" class="footer-logo">
-    </div>
-    <a href="#" class="footer-social">
-      <img src="instagram.svg" alt="Instagram">
-    </a>
-  </div>
-
-
-
-
-
-  <!-- Creditos de iconos 
-    <div> Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect"> Pixel perfect </a> from <</  </div>dia href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>
-    <div> Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik"> Freepik </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>
-    <div> Icons made by <a href="https://www.flaticon.com/authors/ilham-fitrotul-hayat" title="Ilham Fitrotul Hayat"> Ilham Fitrotul Hayat </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>
-    <div> Icons made by <a href="https://www.freepik.com" title="Freepik"> Freepik </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>
-    -->
-
-  </footer>
-
-<p class="footer-copyright">© Sprint Web, 2025.</p>
-
-
-
-  
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-
-  <script src="assets/js/script.js"></script>
-  </body>
-</html>
+<?php get_footer(); ?>

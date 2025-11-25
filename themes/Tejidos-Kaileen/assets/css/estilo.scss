@@ -6,6 +6,7 @@ body {
 
 }
 
+
 /* =========================================================
     TÍTULOS GENERALES Y TEXTOS SECUNDARIOS
 ========================================================= */
@@ -193,6 +194,10 @@ h2 + span {
   border-bottom-left-radius: 3px;
 }
 
+.titulo-seccion-pagina{
+    margin-top: 0px;
+  }
+
 /* =========================================================
     SECCIÓN DE PASOS
 ========================================================= */
@@ -316,6 +321,50 @@ h2 + span {
   object-fit: contain;
 }
 
+.galeria-producto, .imagen-wrap, .attachment-woocommerce_thumbnail{
+  img{
+    max-height: 350px !important;
+    object-fit: cover;
+    border-radius: 22px;
+  }
+}
+
+.boton-eliminar{
+  color: $color-negro;
+  text-decoration: none;
+}
+
+.yith_wapo_groups_container > h5,
+.yith_wapo_groups_container > p {
+    display: none !important;
+}
+
+.options-container{
+  background-color: $color-background;
+}
+
+select, .input-text, .select2-selection__rendered{
+  background-color: $color-blanco;
+  border: 2px solid $color-rosado;
+  border-radius: 22px;
+  option{
+    padding-left: 10%;
+  }
+}
+
+.select2-container--default .select2-selection--single{
+  border: none;
+}
+
+.woocommerce-product-gallery__trigger{
+  display: none;
+}
+
+.yith-wapo-option-value, .input-text {
+  height: 30px;
+  padding-left: 20px;
+}
+
 /* =========================================================
     COMUNIDAD
 ========================================================= */
@@ -385,7 +434,7 @@ footer{
 .faq-icono {
   font-size: 20px;
   font-weight: 500;
-  padding-left: 16rem;
+  padding-left: 8rem;
 }
 
 
@@ -538,7 +587,7 @@ footer{
 
 
 .categorias-slider {
-  overflow-x: auto; // por si necesitas que deslice
+  overflow-x: scroll; 
   white-space: nowrap;
 
   h3{
@@ -589,10 +638,9 @@ footer{
 }
 
 .categorias-slider {
-  overflow-x: auto;
+  overflow-x: scroll;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
 
   &::-webkit-scrollbar {
     display: none;
@@ -606,6 +654,8 @@ footer{
     }
   }
 }
+
+
 
 .botones-carrusel-producto{
   @include mixin-boton-carrusel-producto
@@ -643,7 +693,6 @@ footer{
 
 .formulario-personalizacion{
   @include mixin-input-personalizacion
-  
 }
 
 .modal-footer{
@@ -660,8 +709,77 @@ footer{
     margin-left: 22%;
 }
 
+.btn-volver{
+  img{
+  width: 20px;
+  height: 20px;    
+  }
+}
+
+.addon-header, #wapo-total-price-table, .yith-wapo-block{
+  background-color: $color-background !important;
+  h1, h2, h3, h4, h5, h6, p{
+    background-color: $color-background !important;
+  }
+}
 
 
+
+
+
+    .woocommerce-product-gallery .flex-control-thumbs,
+    .woocommerce-product-gallery__image--thumbnail {
+        display: none !important;
+    }
+
+.opciones-pago, .woocommerce-checkout-payment{
+  background-color: $color-blanco !important;
+}
+
+.carta-pago{
+  background-color: $color-blanco;
+  padding: inherit;
+  border-radius: 22px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.carta-pago-final{
+  background-color: $color-blanco;
+  padding: inherit;
+  border-radius: 22px; 
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.nombre-producto {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.precio-producto {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.variaciones-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 10px;
+  margin-top: 8px;
+}
+
+.variacion-item {
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+
+.woocommerce #payment #place_order, .woocommerce-page #payment #place_order{
+  @include mixin-boton-verde;
+  border: none;
+}
 
 // responsive aca abajo y arriba tambien pero basado en clases, aca para todo
 
@@ -698,17 +816,12 @@ footer{
 
 #carouselPrendas img {
   border-radius: 14px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
   width: 100%;
   height: auto;
   object-fit: cover;
 }
 
 
-#carouselPrendas img:hover {
-  transform: scale(1.05);
-}
 
 
 .carousel-control-prev-icon,
@@ -876,8 +989,8 @@ footer{
     padding: 12px;
   }
  .container{
-    padding-left: 35px !important;
-    padding-right: 35px !important;
+    padding-left: 32px !important;
+    padding-right: 32px !important;
   }
 }
 
@@ -898,6 +1011,8 @@ footer{
     text-align: left;
     margin-left: 0;
   }
+
+  
 
   .titulo-seccion::before {
     left: 0; 

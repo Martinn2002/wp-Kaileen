@@ -2,10 +2,10 @@
 :root{
   --color-verde-chillon: #C4E079;
   --color-verde-claro: #C9D997;
-  --color-verde-oscuro: #2E3B1F;
-  --color-background: #F4F1E5;
-  --color-rosado-borde: #E3A3A3;
-  --color-gris-medio: #7a7a7a;
+  --color-verde-oscuro: #171D07;
+  --color-background: #F2F0E4;
+  --color-rosado-borde: #EF9AB9;
+  --color-gris-medio: #171D07;
   --radio: 14px;
 }
 
@@ -65,6 +65,14 @@ h1,h2,h3{
   align-items:center;
   box-shadow:0 6px 18px rgba(0,0,0,0.06);
   margin-bottom:1rem;
+  border-radius: 22px;
+  padding: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  max-width: 350px;
+  margin: auto;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
 }
 
 .imagen-wrap{
@@ -111,7 +119,7 @@ dt{
 }
 dd{
   margin:0;
-  color:#4f4f4f;
+  color: #171D07;
 }
 
 .valor-producto{
@@ -129,7 +137,7 @@ dd{
 }
 
 /* ===== Total ===== */
-.texto-total{ font-size:1.05rem; color:#555; }
+.texto-total{ font-size:1.05rem; color:#171D07; }
 .monto-total{ color:var(--color-verde-oscuro); font-weight:700; }
 
 /* ===== Formulario ===== */
@@ -164,7 +172,7 @@ dd{
 .nota{
   text-align:center;
   font-size:0.85rem;
-  color:#555;
+  color:#171D07;
 }
 
 /* ===== Botón ===== */

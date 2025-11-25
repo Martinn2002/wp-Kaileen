@@ -15,12 +15,11 @@
             <div class="d-flex align-items-center justify-content-between w-100">
 
              
-                <button class="btn btn-idioma">
+                <button class="btn-idioma">
                     <i class="bi bi-translate fs-5"></i>
                 </button>
 
-                
-                <a class="navbar-brand m-0" href="<?php echo home_url(); ?>">
+      
                     <?php 
                     if (has_custom_logo()) {
                         the_custom_logo();
@@ -28,8 +27,7 @@
                         echo '<h2>' . get_bloginfo("name") . '</h2>';
                     }
                     ?>
-                </a>
-
+            
                 <button class="navbar-toggler p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu">
                     <i class="bi bi-list icono-menu"></i>
                 </button>
@@ -67,8 +65,6 @@
         </div>
 
         <div class="offcanvas-body">
-
-          
             <?php
             wp_nav_menu([
                 'theme_location' => 'menu-principal',

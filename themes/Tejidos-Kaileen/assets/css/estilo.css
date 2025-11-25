@@ -308,11 +308,11 @@ h1, h2, h3 {
 }
 
 p, a {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", sans-serif !important;
 }
 
 h2, h3 {
-  font-weight: 500;
+  font-weight: 500 !important;
 }
 
 h1 {
@@ -324,7 +324,7 @@ h2 {
   font-size: 32px;
 }
 
-h3 {
+h3, th, td {
   font-size: 24px;
 }
 
@@ -333,9 +333,9 @@ h3 {
   font-size: 20px;
 }
 
-.p-mediano {
-  font-family: "Inter", sans-serif;
-  font-size: 16px;
+.p-mediano, h5 {
+  font-family: "Inter", sans-serif !important;
+  font-size: 16px !important;
 }
 
 .p-pequeno {
@@ -366,7 +366,7 @@ h2 + span {
     NAV MOBILE
 ========================================================= */
 .navbar {
-  background: #D1E0A9;
+  background: #C9D997;
 }
 
 .btn-idioma {
@@ -547,6 +547,10 @@ h2 + span {
   border-bottom-left-radius: 3px;
 }
 
+.titulo-seccion-pagina {
+  margin-top: 0px;
+}
+
 /* =========================================================
     SECCIÓN DE PASOS
 ========================================================= */
@@ -660,14 +664,13 @@ h2 + span {
 .tarjeta-producto {
   background: #fff;
   border-radius: 22px;
-  border: 1px solid #D1E0A9;
+  border: 1px solid #C9D997;
   padding: 14px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   max-width: 350px;
   margin: auto;
   text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 280px;
 }
 .tarjeta-producto:hover {
   transform: translateY(-4px);
@@ -675,7 +678,7 @@ h2 + span {
 }
 .tarjeta-producto img {
   width: 100%;
-  height: auto;
+  height: 300px;
   border-radius: 14px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -708,6 +711,49 @@ h2 + span {
   max-height: 350px;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+.galeria-producto img, .imagen-wrap img, .attachment-woocommerce_thumbnail img {
+  max-height: 350px !important;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 22px;
+}
+
+.boton-eliminar {
+  color: #171D07;
+  text-decoration: none;
+}
+
+.yith_wapo_groups_container > h5,
+.yith_wapo_groups_container > p {
+  display: none !important;
+}
+
+.options-container {
+  background-color: #F2F0E4;
+}
+
+select, .input-text, .select2-selection__rendered {
+  background-color: #fff;
+  border: 2px solid #EF9AB9;
+  border-radius: 22px;
+}
+select option, .input-text option, .select2-selection__rendered option {
+  padding-left: 10%;
+}
+
+.select2-container--default .select2-selection--single {
+  border: none;
+}
+
+.woocommerce-product-gallery__trigger {
+  display: none;
+}
+
+.yith-wapo-option-value, .input-text {
+  height: 30px;
+  padding-left: 20px;
 }
 
 /* =========================================================
@@ -817,7 +863,7 @@ footer {
 }
 
 .footer-movil {
-  background-color: #D1E0A9;
+  background-color: #C9D997;
   color: #171D07;
   display: flex;
   flex-direction: column;
@@ -863,7 +909,7 @@ footer {
 .faq-icono {
   font-size: 20px;
   font-weight: 500;
-  padding-left: 16rem;
+  padding-left: 8rem;
 }
 
 /* Logos e iconos */
@@ -909,7 +955,7 @@ footer {
 ========================================================= */
 /* ===== NAVBAR DESKTOP ===== */
 .navbar-desktop .nav-top {
-  background-color: #D1E0A9;
+  background-color: #C9D997;
 }
 
 .navbar-desktop .nav-bottom {
@@ -1000,7 +1046,7 @@ footer {
 }
 
 .categorias-slider {
-  overflow-x: auto;
+  overflow-x: scroll;
   white-space: nowrap;
   z-index: 10;
 }
@@ -1046,10 +1092,9 @@ footer {
 }
 
 .categorias-slider {
-  overflow-x: auto;
+  overflow-x: scroll;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
 }
 .categorias-slider::-webkit-scrollbar {
   display: none;
@@ -1111,6 +1156,77 @@ footer {
   margin-left: 22%;
 }
 
+.btn-volver img {
+  width: 20px;
+  height: 20px;
+}
+
+.addon-header, #wapo-total-price-table, .yith-wapo-block {
+  background-color: #F2F0E4 !important;
+}
+.addon-header h1, .addon-header h2, .addon-header h3, .addon-header h4, .addon-header h5, .addon-header h6, .addon-header p, #wapo-total-price-table h1, #wapo-total-price-table h2, #wapo-total-price-table h3, #wapo-total-price-table h4, #wapo-total-price-table h5, #wapo-total-price-table h6, #wapo-total-price-table p, .yith-wapo-block h1, .yith-wapo-block h2, .yith-wapo-block h3, .yith-wapo-block h4, .yith-wapo-block h5, .yith-wapo-block h6, .yith-wapo-block p {
+  background-color: #F2F0E4 !important;
+}
+
+.woocommerce-product-gallery .flex-control-thumbs,
+.woocommerce-product-gallery__image--thumbnail {
+  display: none !important;
+}
+
+.opciones-pago, .woocommerce-checkout-payment {
+  background-color: #fff !important;
+}
+
+.carta-pago {
+  background-color: #fff;
+  padding: inherit;
+  border-radius: 22px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.carta-pago-final {
+  background-color: #fff;
+  padding: inherit;
+  border-radius: 22px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.nombre-producto {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.precio-producto {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.variaciones-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 10px;
+  margin-top: 8px;
+}
+
+.variacion-item {
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+.woocommerce #payment #place_order, .woocommerce-page #payment #place_order {
+  background: #C4E079;
+  color: #171D07;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  border-radius: 40px;
+  padding: 12px 67px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.37);
+  border: none;
+}
+
 /* =========================================================
     SECCIÓN MATERIALIZA TUS IDEAS (PC)
 ========================================================= */
@@ -1135,15 +1251,10 @@ footer {
   }
   #carouselPrendas img {
     border-radius: 14px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
     width: 100%;
     height: auto;
     -o-object-fit: cover;
        object-fit: cover;
-  }
-  #carouselPrendas img:hover {
-    transform: scale(1.05);
   }
   .carousel-control-prev-icon,
   .carousel-control-next-icon {
@@ -1275,8 +1386,8 @@ footer {
     padding: 12px;
   }
   .container {
-    padding-left: 35px !important;
-    padding-right: 35px !important;
+    padding-left: 32px !important;
+    padding-right: 32px !important;
   }
 }
 /* =========================================================

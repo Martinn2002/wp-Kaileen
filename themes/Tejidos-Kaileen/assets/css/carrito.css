@@ -179,3 +179,14 @@ body {
     width: 100%;
   }
 }
+
+/*  quitar los bordes de Inputs de cantidad WooCommerce */
+input.qty,
+.woocommerce-cart .quantity input[type="number"] {
+    border: none;           
+    background: transparent;  
+    box-shadow: none;        
+    -moz-appearance: textfield; 
+    outline: none;          
+}
+

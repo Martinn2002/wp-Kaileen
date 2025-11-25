@@ -1,7 +1,7 @@
 // Colores
 
 $color-verde-chillon: #C4E079;      
-$color-verde: #D1E0A9;
+$color-verde: #C9D997;
 $color-background: #F2F0E4;
 $color-negro: #171D07;
 $color-rosado: #EF9AB9;
@@ -54,11 +54,11 @@ h1,h2,h3{
 }
 
 p, a{
-    font-family: "Inter", sans-serif;
+    font-family: "Inter", sans-serif !important;
 }
 
 h2,h3{
-    font-weight: 500;  // medium
+    font-weight: 500 !important;  // medium
 }
 
 h1{
@@ -70,7 +70,7 @@ h2{
     font-size: 32px;
 }
 
-h3{
+h3, th, td{
     font-size: 24px;
 }
 
@@ -79,9 +79,9 @@ h3{
     font-size: 20px;
 }
 
-.p-mediano{
-    font-family: "Inter", sans-serif;
-    font-size: 16px;
+.p-mediano, h5{
+    font-family: "Inter", sans-serif !important;
+    font-size: 16px !important;
 }
 
 .p-pequeno{

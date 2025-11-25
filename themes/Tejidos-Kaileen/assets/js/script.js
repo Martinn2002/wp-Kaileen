@@ -41,65 +41,114 @@ if (slider) {
 }
 
 
-// cambio de estado de active
-
+// cambio de estado de active para los botones de categoria
 const buttons = document.querySelectorAll(".cat-btn");
+const cards = document.querySelectorAll(".tarjeta-producto");
 
 if (buttons.length > 0) {
     buttons.forEach((button) => {
         button.addEventListener("click", () => {
+
+            // Cambiar botón activo
             buttons.forEach((btn) => btn.classList.remove("active"));
             button.classList.add("active");
+
+            // Tomar categoría desde el botón
+            const categoria = button.getAttribute("data-target");
+
+            // Filtrar tarjetas
+            cards.forEach((card) => {
+                const column = card.closest(".col-md-4"); 
+                if (categoria === "todos") {
+    column.style.display = "";
+} else if (card.classList.contains(`cat-${categoria}`)) {
+    column.style.display = "";
+} else {
+    column.style.display = "none";
+}
+
+            });
         });
     });
 }
 
 
-const botones_producto = document.querySelectorAll('.boton-producto-info');
-const botonInfo = document.getElementById('boton-info-producto');
-const infoProducto = document.getElementById('info-producto');
-
-if (botones_producto.length > 0){
-
-    if (botonInfo.classList.contains('active')) {
-            infoProducto.innerHTML = '<p class="p-pequeno mt-1">Chaleco tejido a mano en lana de oveja, elaborado con punto espiga que aporta textura y calidez. Una prenda única, suave y naturalmente elegante.</p>';
-        } 
-
-    
 
 
-botones_producto.forEach((boton) => {
-    boton.addEventListener('click', () => {
-        botones_producto.forEach((btn) => btn.classList.remove('active'));
-        boton.classList.add('active');
-        if (botonInfo.classList.contains('active')) {
-            infoProducto.innerHTML = '<p class="p-pequeno">Chaleco tejido a mano en lana de oveja, elaborado con punto espiga que aporta textura y calidez. Una prenda única, suave y naturalmente elegante.</p>';
-        } else if (document.getElementById('boton-personalizacion-producto').classList.contains('active')) {
-            infoProducto.innerHTML =`                        <div class="col-5">
-                            <label for="Material">Material</label>
-                            <input class="w-100" name="Material" id="id-material" data-bs-toggle="modal" data-bs-target="#exampleModal"></input>
-                        </div>
-                        <div class="col-5">
-                            <label for="Talla">Talla</label>
-                            <input class="w-100" name="Talla" id="id-talla"></input>
-                        </div>
-                        <div class="col-2">
-                            <p class="p-mediano"></p>
-                        </div>`;
-        }
+
+
+
+
+
+const btnInfo = document.getElementById("boton-info-producto");
+const btnPers = document.getElementById("boton-personalizacion-producto");
+
+const info = document.getElementById("contenido-info");
+const pers = document.getElementById("contenido-personalizacion");
+
+btnInfo.addEventListener("click", () => {
+    btnInfo.classList.add("active");
+    btnPers.classList.remove("active");
+
+    info.classList.remove("d-none");
+    info.classList.add("contenido-activo");
+
+    pers.classList.add("d-none");
+});
+
+btnPers.addEventListener("click", () => {
+    btnPers.classList.add("active");
+    btnInfo.classList.remove("active");
+
+    pers.classList.remove("d-none");
+    pers.classList.add("contenido-activo");
+
+    info.classList.add("d-none");
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Seleccionar el botón por atributo name
+    const btn = document.querySelector('button[name="add-to-cart"]');
+
+    if (btn) {
+        // Quitar todas las clases actuales
+        btn.className = "";
+
+        // Agregar las nuevas clases
+        btn.classList.add("btn", "btn-principal", "mt-2", "p-grande");
+    }
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const tabla = document.getElementById("wapo-total-price-table");
+
+    if (tabla) {
+        tabla.style.display = "grid";
+        tabla.style.textAlign = "end"
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const selects = document.querySelectorAll("select");
+
+    selects.forEach(sel => {
+        sel.classList.add("p-mediano");
     });
 });
-}
 
+document.querySelectorAll('imagen-wrap').forEach(img => {
+    img.removeAttribute('width');
+    img.removeAttribute('height');
+});
 
+document.addEventListener("DOMContentLoaded", () => {
+    const boton = getElementById("#place_order");
 
-// modal formulario:
-const myModal = document.getElementById('myModal')
-const myInput = document.getElementById('myInput')
-
-myModal.addEventListener('shown.bs.modal', () => {
-  myInput.focus()
-})
-
-const collapseElementList = document.querySelectorAll('.collapse')
-const collapseList = [...collapseElementList].map(collapseEl => new bootstrap.Collapse(collapseEl))
+    if (boton) {
+        boton.className = ""; // Borra todas sus clases
+        boton.classList.add("btn", "btn-principal"); // Asigna las nuevas
+    }
+});

@@ -810,7 +810,7 @@ select option, .input-text option, .select2-selection__rendered option {
      object-fit: cover;
 }
 .tarjeta-comunidad .comunidad-usuario span {
-  font-size: 0.95rem;
+  font-size: 0.95rem; 
   font-weight: 600;
 }
 .tarjeta-comunidad .comunidad-texto {

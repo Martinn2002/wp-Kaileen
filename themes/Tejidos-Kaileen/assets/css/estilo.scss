@@ -1061,6 +1061,73 @@ footer{
   border: none;
 }
 
+/* ================================
+    LOGIN / REGISTER
+================================ */
+.contenedor-login {
+  max-width: 450px;
+}
+/* TABS */
+.login-tabs {
+  .tab-btn {
+    background: $color-blanco;
+    border: 1px solid $color-verde;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-weight: 600;
+    color: $color-negro;
+    transition: 0.3s ease;
+    &.active {
+      background: $color-verde-chillon;
+      border-color: $color-verde-chillon;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+    &:hover {
+      cursor: pointer;
+      background: lighten($color-verde-chillon, 5%);
+    }
+  }
+}
+/* FORMS */
+.form-login,
+.form-register {
+  background: $color-blanco;
+  border: 1px solid $color-verde;
+  border-radius: 22px;
+  padding: 28px 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  h2 {
+    font-weight: 700;
+  }
+  .input-group-text {
+    background: $color-verde-chillon;
+    border: none;
+    color: $color-negro;
+  }
+  .form-control {
+    border-radius: 12px;
+    border: 1px solid $color-verde;
+    color: $color-negro;
+    &:focus {
+      border-color: $color-verde-chillon;
+      box-shadow: 0 0 0 3px rgba($color-verde-chillon, .35);
+    }
+  }
+  .link-recuperar {
+    font-size: 0.9rem;
+    color: $color-rosado;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+.btn-verde {
+  width: 100%;
+  text-align: center;
+}
+
+
 // responsive aca abajo y arriba tambien pero basado en clases, aca para todo
 
 /* =========================================================
@@ -1085,7 +1152,6 @@ footer{
     color: $color-negro;
   }
 
-  c
 
 #carouselPrendas {
   width: 90%;

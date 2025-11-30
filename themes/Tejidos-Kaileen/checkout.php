@@ -26,13 +26,11 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 }
 ?>
 
-<main class="contenedor-checkout">
+<main class="container">
 
-  <div class="encabezado">
-    <div class="linea-vertical"></div>
-    <h1 class="titulo">Check out</h1>
+    <h1 class="titulo-seccion">Check out</h1>
     
-  </div>
+
 
   <!-- RESUMEN DE PRODUCTOS -->
 <?php foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) :

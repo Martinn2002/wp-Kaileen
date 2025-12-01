@@ -10,12 +10,12 @@ if (!isset($order) || !is_a($order, 'WC_Order')) {
 
 ?>
 
-<main class="contenedor-gracias container-fluid">
+<main class="contenedor-gracias container">
 
     <header class="encabezado text-center">
-      <h1 class="titulo-principal">¡Gracias por tu compra!</h1>
+      <h1>¡Gracias por tu compra!</h1>
       <p class="subtitulo">Tu compra fue recibida</p>
-      <p class="texto-pequeno">Estoy preparando tu pedido</p>
+      <p class="p-pequeno">Estoy preparando tu pedido</p>
     </header>
 
     <!-- PROGRESO -->

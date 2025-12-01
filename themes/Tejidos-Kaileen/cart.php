@@ -9,14 +9,14 @@ defined('ABSPATH') || exit;
 
 ?>
 
-<main class="contenedor-carrito">
-
+<main class="container">
     <!-- Encabezado -->
     <section class="encabezado-carrito">
         <div class="decoracion-linea"></div>
-        <h1 class="titulo-carrito">Carrito</h1>
+        <h1 class="titulo-seccion">Carrito</h1>
     </section>
 
+<div class="contenedor-carrito">
     <!-- Lista de productos -->
     <section class="lista-productos">
         <?php if ( WC()->cart->get_cart_contents_count() > 0 ) : ?>
@@ -44,16 +44,16 @@ defined('ABSPATH') || exit;
 
                     <div class="info-producto col-8">
                         <div class="cabecera-producto">
-                            <h2 class="nombre-producto"><?php echo esc_html( $product_name ); ?></h2>
+                            <p class="nombre-producto p-mediano"><?php echo esc_html( $product_name ); ?></p>
                             <a href="<?php echo esc_url( wc_get_cart_remove_url( $cart_item_key ) ); ?>" class="boton-eliminar" aria-label="Eliminar <?php echo esc_attr( $product_name ); ?>">&times;</a>
                         </div>
-                        <p class="descripcion-producto">
+                        <p class="descripcion-producto p-pequeno">
                             <?php echo wc_get_formatted_cart_item_data( $cart_item ); ?>
                         </p>
-                        <p class="precio-producto">
+                        <p class="precio-producto p-mediano">
                             <?php echo wp_kses_post( $price ); ?>
                         </p>
-                        <div class="cantidad-producto">
+                        <div class="cantidad-producto p-pequeno">
                             <?php
                             echo woocommerce_quantity_input( array(
                                 'input_name'  => "cart[{$cart_item_key}][qty]",
@@ -71,6 +71,7 @@ defined('ABSPATH') || exit;
             <p>Tu carrito está vacío.</p>
         <?php endif; ?>
     </section>
+</div>
 
     <!-- Total de la compra -->
     <section class="total-carrito">
@@ -79,7 +80,7 @@ defined('ABSPATH') || exit;
 
     <!-- Botón para pagar -->
     <div class="contenedor-boton">
-        <a href="<?php echo wc_get_checkout_url(); ?>" class="boton-pagar">Pagar</a>
+        <a href="<?php echo wc_get_checkout_url(); ?>" class="btn btn-principal">Pagar</a>
     </div>
 
 </main>

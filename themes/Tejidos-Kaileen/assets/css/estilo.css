@@ -1445,9 +1445,10 @@ footer {
 
 .recomendacion-error {
   background-color: #fff;
+  display: flex;
 }
 .recomendacion-error img {
-  height: 30px;
+  height: 100px;
   width: 100%;
   -o-object-fit: contain;
      object-fit: contain;

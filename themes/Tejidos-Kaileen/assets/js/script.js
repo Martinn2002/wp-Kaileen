@@ -1,4 +1,4 @@
-const slider = document.querySelector(".categorias-slider");
+const slider = document.querySelector(".cat-tabs");
 
 if (slider) {
     let isDown = false;
@@ -23,20 +23,24 @@ if (slider) {
         if (!isDown) return;
         e.preventDefault();
         const x = e.pageX - slider.offsetLeft;
-        const walk = (x - startX) * 2;
-        slider.scrollLeft = scrollLeft - walk;
+        slider.scrollLeft = scrollLeft - (x - startX);
     });
 
     // TOUCH
     slider.addEventListener("touchstart", (e) => {
+        isDown = true;
         startX = e.touches[0].pageX;
         scrollLeft = slider.scrollLeft;
     });
 
+    slider.addEventListener("touchend", () => {
+        isDown = false;
+    });
+
     slider.addEventListener("touchmove", (e) => {
+        if (!isDown) return;
         const x = e.touches[0].pageX;
-        const walk = (x - startX) * 2;
-        slider.scrollLeft = scrollLeft - walk;
+        slider.scrollLeft = scrollLeft - (x - startX);
     });
 }
 

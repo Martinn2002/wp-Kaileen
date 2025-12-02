@@ -867,74 +867,59 @@ footer{
 
 
 .categorias-slider {
-  overflow-x: scroll; 
-  white-space: nowrap;
 
-  h3{
-      font-size: 16px !important;
-    }
-  z-index: 10;
-  .cat-tabs {
-    padding: 0;
-    margin: 0;
-    gap: 0;
-
-    li { list-style: none; }
-
-    .cat-btn {
-      h3{
-        margin-bottom: 0px;
-      }
-      border: none;
-      background: $color-blanco;
-      padding: 12px 28px;
-      font-size: 16px;
-      font-weight: 500;
-      border-right: 1px solid $color-verde-chillon;
-      cursor: pointer;
-      border-bottom: 3px solid transparent;
+    h3 {
+        font-size: 16px !important;
     }
 
-    .active {
-      background: $color-rosado;  
-      box-shadow: inset 0 6px 8px -6px rgba(0, 0, 0, 0.473);
-      border-right: 0px;
+    .cat-tabs {
+        width: 100vw;
+        display: flex;
+        padding: 0;
+        margin: 0;
+        gap: 0;
+        list-style: none;
 
+        /* 🔥 CONTENEDOR DEL SLIDER */
+    
+
+        overflow-x: auto;
+
+        -webkit-overflow-scrolling: touch;
+        position: sticky;
+
+        /* Ocultar scroll */
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .cat-btn {
+            /* 🔥 LA LÍNEA QUE IMPORTA */
+            flex: 0 0 auto;       /* No crecer / no encoger / tamaño según contenido */
+
+            /* Estilos */
+            border: none;
+            background: $color-blanco;
+            padding: 12px 28px;
+            font-size: 16px;
+            font-weight: 500;
+            border-right: 1px solid $color-verde-chillon;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            white-space: nowrap;  /* 🔥 evita romper texto y expandir */
+
+            h3 {
+                margin-bottom: 0;
+            }
+
+            &.active {
+                background: $color-rosado;
+                box-shadow: inset 0 6px 8px -6px rgba(0, 0, 0, 0.473);
+            }
+        }
     }
-  }
 }
-
-.cat-contenido {
-  background: $color-blanco;
-  padding: 25px 10px;
-
-  .cat-panel {
-    display: none;
-  }
-
-  .cat-panel.active {
-    display: block;
-  }
-}
-
-.categorias-slider {
-  overflow-x: scroll;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  .cat-tabs {
-    display: inline-flex;
-    li {
-      list-style: none;
-      display: inline-block;
-    }
-  }
-}
-
 
 
 .botones-carrusel-producto{
@@ -1364,6 +1349,5 @@ footer{
     left: 0; 
   }
 }
-
 
 

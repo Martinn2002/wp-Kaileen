@@ -1,4 +1,4 @@
-<footer class="footer-movil">
+<footer class="footer-movil mt-5">
 
     <div class="main-footer">
 

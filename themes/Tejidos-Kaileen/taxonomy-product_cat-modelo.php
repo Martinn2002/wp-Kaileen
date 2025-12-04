@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <main>
-    <div class="categorias-slider">
+    <div class="categorias-slider w-100">
         <ul class="cat-tabs">
             <li><button class="cat-btn active" data-target="todos"><h3>Todos</h3></button></li>
             <li><button class="cat-btn" data-target="chaleco"><h3>Chalecos</h3></button></li>

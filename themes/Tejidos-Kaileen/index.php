@@ -245,7 +245,7 @@ wp_reset_postdata();
  <h3>Post Destacado</h3>
 <div class="tarjeta-comunidad">
 
-  <img src="assets/img/comunidad-post.png" class="comunidad-imagen">
+  <img src="assets/img/comunidad-post.png" class="comunidad-imagen" alt="">
 
 
   <div class="comunidad-header">

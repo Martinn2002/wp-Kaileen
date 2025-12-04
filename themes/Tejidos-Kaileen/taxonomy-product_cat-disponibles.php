@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <main>
-    <div class="categorias-slider">
+    <div class="categorias-slider w-100">
             filtro     
     </div>
 

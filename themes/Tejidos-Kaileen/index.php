@@ -132,9 +132,9 @@
     <section class="info-franja">
       <div class="container justify-content-around">
       <div class="row">
-        <div class="col-4"><img class="iconos-franja" src="<?php echo get_template_directory_uri() . '/assets/img/iconos/caja-aprobada.png'?>" alt=""><p class="p-mediano">Envío Gratis</p></div>
-        <div class="col-4"><img class="iconos-franja" src="<?php echo get_template_directory_uri() . '/assets/img/iconos/tipos-de-pago.png' ?>" alt=""><p class="p-mediano">Diferentes Metodos De Pago</p></div>
-        <div class="col-4"><img class="iconos-franja" src="<?php echo get_template_directory_uri() . '/assets/img/iconos/sweater.png' ?>" alt=""><p class="p-mediano">Diseño Personalizado</p></div>
+        <div class="col-4"><img class="iconos-franja" src="<?php echo get_template_directory_uri() . '/assets/img/iconos/caja-aprobada.svg'?>" alt="caja aprobada"><p class="p-mediano">Envío Gratis</p></div>
+        <div class="col-4"><img class="iconos-franja" src="<?php echo get_template_directory_uri() . '/assets/img/iconos/targetias.svg' ?>" alt="medio de pago"><p class="p-mediano">Diferentes Metodos De Pago</p></div>
+        <div class="col-4"><img class="iconos-franja" src="<?php echo get_template_directory_uri() . '/assets/img/iconos/chaleco.svg' ?>" alt="sweater"><p class="p-mediano">Diseño Personalizado</p></div>
       </div>
       </div>
     </section>
@@ -187,7 +187,7 @@ if ($loop->have_posts()) :
                     </div>
 
                     <button class="btn-compartir" data-url="<?php the_permalink(); ?>" data-title="<?php the_title(); ?>">
-                      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/iconos/compartir.png" alt="">
+                      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/iconos/box-arrow.svg" alt="compartir">
                     </button>
 
                 </div>
@@ -250,7 +250,7 @@ wp_reset_postdata();
 
   <div class="comunidad-header">
     <h3>Bonito chaleco modelo chicle</h3>
-    <button class="btn-compartir"><img src="assets/img/iconos/compartir.png" alt=""></button>
+    <button class="btn-compartir"><img src="assets/img/iconos/box-arrow.svg" alt="compartir"></button>
 
   </div>
 

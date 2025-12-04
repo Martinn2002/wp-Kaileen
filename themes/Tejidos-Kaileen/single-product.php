@@ -24,7 +24,7 @@ get_header();
 $back = wp_get_referer() ? wp_get_referer() : home_url();
 ?>
 <a href="<?php echo esc_url( $back );?>" class="btn-volver">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/iconos/flecha-izquierda.png" alt="volver"></a>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/iconos/chevron-left.svg" alt="volver"></a>
             </div>
         </div>
 
@@ -60,7 +60,7 @@ $back = wp_get_referer() ? wp_get_referer() : home_url();
                     </div>
                     <div class="col-4 d-flex justify-content-center">
                         <button class="btn-compartir btn-compartir-producto d-flex">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/iconos/compartir.png" alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/iconos/box-arrow.svg" alt="compartir">
                         </button>
                     </div>
                 </div>

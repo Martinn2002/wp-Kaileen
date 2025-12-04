@@ -41,7 +41,7 @@
                             </div>
 
                             <button class="btn-compartir">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/iconos/compartir.png" alt="">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/iconos/box-arrow.svg" alt="compartir">
                             </button>
                         </div>
 
@@ -59,11 +59,11 @@
 
         <div class="row">
             <ul class="paginacion d-flex justify-content-center">
-                <li><a class="p-btn" href="#"><img src="assets/img/iconos/flecha-izquierda.png" alt=""></a></li>
+                <li><a class="p-btn" href="#"><img src="assets/img/iconos/chevron-left.svg" alt="flecha izquierda"></a></li>
                 <li><a class="p-btn active" href="#">1</a></li>
                 <li><a class="p-btn" href="#">2</a></li>
                 <li><a class="p-btn" href="#">3</a></li>
-                <li><a class="p-btn" href="#"><img src="assets/img/iconos/flecha-derecha.png" alt=""></a></li>
+                <li><a class="p-btn" href="#"><img src="assets/img/iconos/chevron-right.svg" alt="flecha derecha"></a></li>
             </ul>
         </div>
 

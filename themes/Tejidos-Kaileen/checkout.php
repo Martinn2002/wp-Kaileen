@@ -134,7 +134,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 
     </fieldset>
 
-    <p class="nota">Para realizar un pedido personalizado es necesario un abono mínimo del 50% del total.</p>
+    <p class="nota mt-1">Para realizar un pedido personalizado es necesario un abono mínimo del 50% del total.</p>
     <?php do_action( 'woocommerce_review_order_after_payment' ); ?>
 
   </form>

@@ -650,11 +650,22 @@ select,
   background-color: $color-blanco;
   border: 2px solid $color-rosado;
   border-radius: 22px;
-
+  padding-left: 14px !important;
   option {
     padding-left: 10%;
   }
 }
+
+
+.leyenda{
+  font-weight: 600;
+}
+
+.select2-container .select2-selection--single .select2-selection__arrow{
+  padding-right: 25px !important; 
+}
+
+
 
 .select2-container--default .select2-selection--single {
   border: none;
@@ -1115,7 +1126,6 @@ footer {
 ================================ */
 .contenedor-login {
   max-width: 450px;
-  background-color: yellow !important;
 }
 
 /* TABS */

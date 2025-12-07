@@ -918,6 +918,7 @@ h2 + span {
   border-radius: 40px;
   padding: 12px 67px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.37);
+  font-size: 20px;
 }
 
 .btn-compartir {
@@ -1054,11 +1055,20 @@ select,
   background-color: #fff;
   border: 2px solid #EF9AB9;
   border-radius: 22px;
+  padding-left: 14px !important;
 }
 select option,
 .input-text option,
 .select2-selection__rendered option {
   padding-left: 10%;
+}
+
+.leyenda {
+  font-weight: 600;
+}
+
+.select2-container .select2-selection--single .select2-selection__arrow {
+  padding-right: 25px !important;
 }
 
 .select2-container--default .select2-selection--single {
@@ -1569,6 +1579,7 @@ footer {
   border-radius: 40px;
   padding: 12px 67px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.37);
+  font-size: 20px;
   border: none;
 }
 
@@ -1577,7 +1588,6 @@ footer {
 ================================ */
 .contenedor-login {
   max-width: 450px;
-  background-color: yellow !important;
 }
 
 /* TABS */

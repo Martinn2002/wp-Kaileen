@@ -1071,8 +1071,13 @@ select option,
 
 .yith-wapo-option-value,
 .input-text {
-  height: 30px;
-  padding-left: 20px;
+  height: 40px;
+  padding-left: 12px;
+}
+
+.bloque {
+  padding-top: 30px;
+  padding-bottom: 10px;
 }
 
 /* =========================================================
@@ -1635,9 +1640,18 @@ footer {
   text-decoration: underline;
 }
 
+#billing_address_2, #billing_address_2_field {
+  margin: 0px;
+  display: none;
+}
+
 .btn-verde {
   width: 100%;
   text-align: center;
+}
+
+.validate-required {
+  margin-bottom: 30px;
 }
 
 /* =========================================================

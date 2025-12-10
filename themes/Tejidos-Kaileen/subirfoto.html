@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registrarse / Iniciar Sesión - Tejidos Kaileen</title>
+    <title>Comparte tu tejido - Tejidos Kaileen</title>
     <!-- bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
@@ -40,61 +40,83 @@
     </header>
 
     <!-- MAIN -->
-    <main class="container my-5 contenedor-login">
-        <!-- opciones TABS -->
-        <div class="login-tabs d-flex justify-content-center gap-4 mb-4">
-            <button class="tab-btn active" id="btn-login">Iniciar sesión</button>
-            <button class="tab-btn" id="btn-register">Registrarse</button>
-        </div>
-        <!-- FORM LOGIN -->
-        <form class="form-login form-activo">
-            <h2 class="text-center mb-3">Iniciar sesión</h2> 
+    <main class="main-subirfoto">
+        <section class="hero-comparte container">
+            <h1>Comparte tu tejido</h1>
+            <p class="subtitulo">Sube una foto y forma parte de la comunidad</p>
+            <p class="descripcion">¡Me encanta ver cómo luce tu compra!</p>
+        </section>
+        <!-- paso a paso -->
+        <section class="pasos-wrapper">
+            <div class="pasos-bg"></div>
+                <div class="contenedor-pasos">
+                    <div class="pasos-subida">
+                        <div class="paso">
+                            <span class="numero">1.</span>
+                            <p>Toma una foto<br>con buena luz</p>
+                        </div>
+                        <div class="paso">
+                            <span class="numero">2.</span>
+                            <p>Asegúrate de mostrar<br>tu prenda completa</p>
+                        </div>
+                        <div class="paso">
+                            <span class="numero">3.</span>
+                            <p>Sube tu imagen</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- formulario -->
+            <section class="formulario-carga container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>Formulario de carga</h2>
+                        <p class="requeridos">*campos requeridos</p>
+                        <div class="form-bloque subir-foto">
+                            <label class="p-mediano">1 - Carga tu foto *</label>
+                            <label class="input-file-kaileen">
+                                <span>Sube aquí tu fotografía</span>
+                                <img src="assets/img/subir-archivo.png" alt="icono upload">
+                                <input type="file" id="fotoSubida" accept="image/*">
+                            </label>
+                        </div>
+                        <div class="form-bloque autorizo-wrapper">
+                            <label class="p-mediano">2 - Autorizo a Kaileen a usar mi fotografía *</label>
+                            <div class="checkbox-area">
+                                <input type="checkbox" id="autorizo">
+                                <label for="autorizo" class="p-mediano">Sí, autorizo</label>
+                            </div>
+                        </div>
 
-            <div class="mb-3">
-                <label class="form-label">Correo electrónico</label>
-                <div class="input-group">
-                    <span class="input-group-text"><i class="bi bi-envelope"></i></span>
-                    <input type="email" class="form-control" placeholder="ejemplo@gmail.com">
+                        <div class="form-bloque mt-2">
+                            <label class="p-mediano">3 - Cuéntanos algo sobre tu prenda</label>
+
+                            <textarea class="textarea-kaileen" placeholder="Deja un comentario..."></textarea>
+                        </div>
+                        <button class="btn boton-verde p-grande mt-2">Publicar</button>
+                    </div>
+                <div class="col-md-6">
+                    <div class="caja-rosada">
+                        <img src="assets/img/tejido-de-punto.png" alt="icono de tejido">
+                        <p>Cada foto que subes ayuda a más personas a conocer la calidez del tejido hecho a mano</p>
+                    </div>
                 </div>
             </div>
-
-            <div class="mb-3">
-                <label class="form-label">Contraseña</label>
-                <div class="input-group">
-                    <span class="input-group-text"><i class="bi bi-lock"></i></span>
-                    <input type="password" class="form-control" placeholder="********">
-                </div>
+        </section>
+        <!-- seccion posts destacados -->
+        <section class="comunidad-listado container">
+            <h2>Comunidad</h2>
+            <p class="intro">¡Ven a compartir tus mejores looks con Tejidos Kaileen!</p>
+            <h3 class="mt-2">Post destacado</h3>
+            <div class="espacio-post-destacado">
+                <!-- aqui va la tarjeta de comunidad-->
             </div>
-
-            <div class="text-end mb-3">
-                <a href="#" class="link-recuperar">¿Olvidaste tu contraseña?</a>
+            <!-- btn enlace comunidad -->
+            <div class="text-center mt-3">
+                <a href="#" class="btn boton-verde p-grande">Comunidad</a>
             </div>
-            <button type="submit" class="btn-principal p-grande">Ingresar</button>
-        </form>
-
-        <!-- FORM REGISTRO -->
-        <form class="form-register d-none">
-            <h2 class="text-center mb-3">Crear cuenta</h2>
-            <div class="mb-3">
-                <label class="form-label">Nombre completo</label>
-                <input type="text" class="form-control" placeholder="Tu nombre">
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Correo electrónico</label>
-                <input type="email" class="form-control" placeholder="ejemplo@gmail.com">
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Contraseña</label>
-                <input type="password" class="form-control" placeholder="********">
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Confirmar contraseña</label>
-                <input type="password" class="form-control" placeholder="********">
-            </div>
-            <button type="submit" class="btn-principal p-grande">Crear cuenta</button>
-        </form>
+        </section>
     </main>
-
     <!-- FOOTER -->
     <footer class="footer-movil">
         <div class="main-footer">
@@ -150,25 +172,5 @@
     </footer>
     <!-- script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const btnLogin = document.getElementById('btn-login');
-        const btnRegister = document.getElementById('btn-register');
-        const formLogin = document.querySelector('.form-login');
-        const formRegister = document.querySelector('.form-register');
-
-        btnRegister.addEventListener('click', () => {
-            formLogin.classList.add('d-none');
-            formRegister.classList.remove('d-none');
-            btnLogin.classList.remove('active');
-            btnRegister.classList.add('active');
-        });
-
-        btnLogin.addEventListener('click', () => {
-            formRegister.classList.add('d-none');
-            formLogin.classList.remove('d-none');
-            btnRegister.classList.remove('active');
-            btnLogin.classList.add('active');
-        });
-    </script>
 </body>
 </html>

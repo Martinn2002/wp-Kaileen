@@ -255,12 +255,12 @@
 
   .texto-carta-error {
     display: flex;
-    height: 110px;
+    height: 100%;
     background: $color-background;
     border-radius: 15px;
     justify-content: center;
     align-items: center;
-    padding:  50px;
+    padding:  12px;
   }
 }
 

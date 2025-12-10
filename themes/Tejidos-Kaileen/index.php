@@ -145,7 +145,7 @@
     <div class="container">
     <h2 class="titulo-seccion">Disponibles</h2>
     <h3>Diseños disponibles para entrega inmediata</h3>
-<div id="carouselProductos" class="carousel slide" data-bs-ride="carousel">
+<div id="carouselDisponibles" class="carousel slide" data-bs-ride="carousel">
 <div class="carousel-inner">
 
 <?php
@@ -219,11 +219,11 @@ wp_reset_postdata();
 
 
   
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselProductos" data-bs-slide="prev">
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselDisponibles" data-bs-slide="prev">
     <span class="carousel-control-prev-icon"></span>
     <span class="visually-hidden">Anterior</span>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselProductos" data-bs-slide="next">
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselDisponibles" data-bs-slide="next">
     <span class="carousel-control-next-icon"></span>
     <span class="visually-hidden">Siguiente</span>
   </button>

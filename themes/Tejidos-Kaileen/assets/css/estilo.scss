@@ -352,8 +352,14 @@ h2+span {
 }
 
 .icono-usuario {
-  width: 30px;
-  height: 30px;
+  width: 30px !important;
+  height: 30px !important;
+  color: $color-negro;
+}
+
+.icono-error {
+  width: 90px !important;
+  height: 90px !important;
   color: $color-negro;
 }
 
@@ -1006,12 +1012,15 @@ footer {
 
 
 .fondo-pag-error{
-  background-image: url(../img/banner.png);
+  background-image: url(../img/fondo-error.png);
+  background-size: contain;
 }
 
 .recomendacion-error{
   background-color: $color-blanco;
   display: flex;
+  border-radius: 15px;
+  height: 160px;
   img{
     height: 100px;
     width: 100%;

@@ -91,3 +91,14 @@ h3, th, td{
 
 
 
+// esto deberia arreglar los colores de apple
+
+.cat-btn h3 , select{
+    color: $color-negro !important; 
+}
+
+.cat-btn , select{
+    color:  $color-negro  !important; 
+    -webkit-appearance: none !important; 
+    appearance: none !important;
+}

@@ -67,7 +67,7 @@
   
         <div class="footer-marca">
             <a href="<?php echo home_url(); ?>">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-kaileen 1.png" alt="Logo Tejidos Kaileen" class="footer-logo">
+                <?php the_custom_logo(); ?>
             </a>
         </div>
 

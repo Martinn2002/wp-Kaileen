@@ -1590,6 +1590,10 @@ footer {
   line-height: 1.2;
 }
 
+.cantidad-producto {
+  display: none !important;
+}
+
 .woocommerce #payment #place_order,
 .woocommerce-page #payment #place_order {
   background: #C4E079;
@@ -2108,6 +2112,61 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 12px;
+}
+
+.tarjeta-checkout {
+  background: #fff;
+  border-radius: 22px;
+  padding: 14px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.288);
+  width: 100%;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 0px !important;
+}
+.tarjeta-checkout:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+.tarjeta-checkout .circulo {
+  display: flex;
+  width: 110px;
+  height: 110px;
+  background: #F2F0E4;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+.tarjeta-checkout img {
+  width: 100%;
+  height: 65px;
+  border-radius: 14px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.tarjeta-checkout .texto-carta-error {
+  display: flex;
+  height: 100%;
+  background: #F2F0E4;
+  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+}
+
+.overlay {
+  background-image: url(../img/fondo-checkout.png);
+}
+
+.tarjetas-resumen {
+  padding: 70px 0px;
+}
+
+.imagen-sobre-mi {
+  width: 100%;
+  max-height: 300px !important;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 /* ======== AJUSTES MÓVIL (PEQUEÑOS) ======== */

@@ -2199,4 +2199,7 @@ footer {
   .titulo-seccion::before {
     left: 0;
   }
+}
+.foto-sobremi {
+  width: 10rem;
 }/*# sourceMappingURL=estilo.css.map */

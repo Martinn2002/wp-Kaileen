@@ -1037,12 +1037,6 @@ h2 + span {
 /* =========================================================
     CARRUSEL GENERAL
 ========================================================= */
-#carouselPrendas img {
-  max-height: 350px;
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-
 .galeria-producto img,
 .imagen-wrap img,
 .attachment-woocommerce_thumbnail img {
@@ -2317,6 +2311,12 @@ header {
   max-height: 300px !important;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.img-banner-perso {
+  height: 20vh;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 /* ======== AJUSTES MÓVIL (PEQUEÑOS) ======== */

@@ -621,10 +621,7 @@ h2+span {
 /* =========================================================
     CARRUSEL GENERAL
 ========================================================= */
-#carouselPrendas img {
-  max-height: 350px;
-  object-fit: contain;
-}
+
 
 .galeria-producto,
 .imagen-wrap,
@@ -1739,7 +1736,10 @@ header {
   object-fit: cover;
 }
 
-
+.img-banner-perso {
+  height: 20vh;
+  object-fit: contain;
+}
 
 
 

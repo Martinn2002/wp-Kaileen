@@ -1925,6 +1925,153 @@ footer {
   font-size: 20px;
 }
 
+/* ==========================================
+  HEADER KAILEEN — Mobile First
+========================================== */
+header {
+  width: 100%;
+  border: none !important;
+}
+
+.nav-principal {
+  background-color: #C9D997 !important;
+  border: none !important;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.nav-principal .navbar-brand img {
+  height: 40px;
+  width: auto;
+}
+@media (min-width: 992px) {
+  .nav-principal .navbar-brand img {
+    height: 55px;
+  }
+}
+
+.icons-desktop img {
+  height: 22px;
+  width: auto;
+  display: block;
+  transition: 0.2s;
+  filter: brightness(0);
+}
+
+.icons-desktop img:hover {
+  opacity: 0.7;
+}
+
+/* buscador (mobile + desktop) */
+.input-group,
+.navbar-expand-lg form {
+  display: flex;
+  align-items: center;
+  height: 39px;
+  border-radius: 44px !important;
+  overflow: hidden;
+  background: #fff;
+}
+.input-group input,
+.navbar-expand-lg form input {
+  flex: 1;
+  height: 100%;
+  border: none !important;
+  background: transparent;
+  padding: 0 14px;
+  font-size: 14px;
+}
+.input-group input::-moz-placeholder, .navbar-expand-lg form input::-moz-placeholder {
+  color: #171D07;
+  opacity: 0.7;
+}
+.input-group input::placeholder,
+.navbar-expand-lg form input::placeholder {
+  color: #171D07;
+  opacity: 0.7;
+}
+.input-group button,
+.navbar-expand-lg form button {
+  height: 100%;
+  padding: 0 16px;
+  border: none !important;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.input-group button i,
+.navbar-expand-lg form button i {
+  color: #171D07;
+  font-size: 18px;
+}
+
+/* nav secundario (desktop) */
+.nav-secundario {
+  height: 60px;
+  background-color: #C4E079 !important;
+  border: none !important;
+  padding: 0 !important;
+}
+.nav-secundario .navbar-nav .nav-link {
+  font-family: "Syne", sans-serif !important;
+}
+.nav-secundario .nav-link {
+  color: #171D07 !important;
+  font-size: 16px;
+}
+.nav-secundario .nav-link:hover {
+  opacity: 0.7;
+}
+@media (max-width: 991px) {
+  .nav-secundario {
+    display: none !important;
+  }
+}
+
+/* menu hamburguesa */
+.offcanvas {
+  background-color: #C9D997;
+}
+.offcanvas .offcanvas-header {
+  border-bottom: 1px solid #171D07;
+}
+.offcanvas .offcanvas-header button {
+  color: #171D07;
+}
+.offcanvas .offcanvas-header button i {
+  font-size: 32px;
+}
+.offcanvas .nav-link {
+  color: #171D07 !important;
+  font-size: 20px;
+}
+.offcanvas .nav-link i {
+  margin-right: 8px;
+}
+.offcanvas .nav-link:hover {
+  opacity: 0.7;
+}
+
+.icon-mobile {
+  height: 22px;
+  width: auto;
+  display: block;
+  filter: brightness(0);
+  transition: 0.2s;
+}
+
+.icon-mobile:hover {
+  opacity: 0.7;
+}
+
+/* nav responsive*/
+@media (max-width: 991px) {
+  .navbar-brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
 /* =========================================================
     SECCIÓN MATERIALIZA TUS IDEAS (PC)
 ========================================================= */

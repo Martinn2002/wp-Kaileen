@@ -1420,6 +1420,133 @@ footer {
   }
 }
 
+/* ==========================================
+  HEADER KAILEEN — Mobile First
+========================================== */
+header {
+  width: 100%;
+  border: none !important;
+}
+.nav-principal {
+  background-color: $color-verde !important;
+  border: none !important;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  .navbar-brand img {
+    height: 40px;
+    width: auto;
+    @media (min-width: 992px) {
+      height: 55px;
+    }
+  }
+}
+.icons-desktop img {
+  height: 22px;
+  width: auto;
+  display: block;
+  transition: .2s;
+  filter: brightness(0);
+}
+.icons-desktop img:hover {
+  opacity: .7;
+}
+/* buscador (mobile + desktop) */
+.input-group,
+.navbar-expand-lg form {
+  display: flex;
+  align-items: center;
+  height: 39px;
+  border-radius: 44px !important;
+  overflow: hidden;
+  background: $color-blanco;
+  input {
+    flex: 1;
+    height: 100%;
+    border: none !important;
+    background: transparent;
+    padding: 0 14px;
+    font-size: 14px;
+    &::placeholder {
+      color: $color-negro;
+      opacity: .7;
+    }
+  }
+  button {
+    height: 100%;
+    padding: 0 16px;
+    border: none !important;
+    background: $color-blanco;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    i {
+      color: $color-negro;
+      font-size: 18px;
+    }
+  }
+}
+/* nav secundario (desktop) */
+.nav-secundario {
+  height: 60px;
+  background-color: $color-verde-chillon !important;
+  border: none !important;
+  padding: 0 !important;
+  .navbar-nav .nav-link{
+    font-family: 'Syne', sans-serif !important;
+  }
+  .nav-link {
+    color: $color-negro !important;
+    font-size: 16px;
+    &:hover {
+      opacity: .7;
+    }
+  }
+  @media (max-width: 991px) {
+    display: none !important;
+  }
+}
+/* menu hamburguesa */
+.offcanvas {
+  background-color: $color-verde;
+  .offcanvas-header {
+    border-bottom: 1px solid $color-negro;
+    button {
+      color: $color-negro;
+      i {
+        font-size: 32px;
+      }
+    }
+  }
+  .nav-link {
+    color: $color-negro !important;
+    font-size: 20px;
+    i {
+      margin-right: 8px;
+    }
+    &:hover {
+      opacity: .7;
+    }
+  }
+}
+.icon-mobile {
+  height: 22px;
+  width: auto;
+  display: block;
+  filter: brightness(0);
+  transition: .2s;
+}
+.icon-mobile:hover {
+  opacity: .7;
+}
+/* nav responsive*/
+@media (max-width: 991px) {
+  .navbar-brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 // responsive aca abajo y arriba tambien pero basado en clases, aca para todo
 
 /* =========================================================

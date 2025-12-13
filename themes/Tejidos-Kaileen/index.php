@@ -6,10 +6,61 @@
 
 <div class="promo-cinta">
   <div class="promo-pista">
-    <span class="promo-item">Promoción 2x1 toda la semana</span>
-    <span class="promo-item">Envíos a todo Chile</span>
-    <span class="promo-item">Nuevas colecciones</span>
+    <?php
+    $page = get_page_by_path('ubicacion'); // slug de la página
+
+    if ($page):
+
+      if (have_rows('ingresa_un_dia', $page->ID)):
+
+        while (have_rows('ingresa_un_dia', $page->ID)): the_row();
+
+          $lugar  = get_sub_field('nombre_del_lugar');
+          $maps   = get_sub_field('ingresar_link_de_google_maps');
+          $inicio = get_sub_field('dia-hora-1');
+          $fin    = get_sub_field('dia-hora-2');
+
+          if (!$inicio && !$lugar) continue;
+
+          $inicio_formateado = $inicio
+            ? date_i18n('l d F · H:i', strtotime($inicio))
+            : '';
+    ?>
+
+          <p class="p-grande bold promo-item">
+            <?php if ($maps): ?>
+              <a href="<?php echo esc_url($maps); ?>" target="_blank">
+                <?php echo esc_html($lugar); ?>
+              </a>
+            <?php else: ?>
+              <?php echo esc_html($lugar); ?>
+            <?php endif; ?>
+
+            <?php if ($inicio_formateado): ?>
+              — <?php echo esc_html($inicio_formateado); ?>
+            <?php endif; ?>
+
+            <?php if ($fin): ?>
+              a <?php echo esc_html($fin); ?>
+            <?php endif; ?>
+          </p>
+
+
+        <?php endwhile;
+
+      else: ?>
+        <p class="p-grande bold promo-item">
+          No hay fechas programadas.
+        </p>
+      <?php endif;
+
+    else: ?>
+      <p class="p-grande bold promo-item">
+        Página de ubicación no encontrada.
+      </p>
+    <?php endif; ?>
   </div>
+
 </div>
 
 <div class="container">

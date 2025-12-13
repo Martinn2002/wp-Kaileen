@@ -354,6 +354,14 @@ h3, th, td {
        appearance: none !important;
 }
 
+.promo-item {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.promo-item a {
+  color: #171D07;
+}
+
 body {
   background-color: #F2F0E4;
 }
@@ -844,6 +852,17 @@ h2 + span {
 
 .promo-item {
   margin-right: 2rem;
+}
+
+.promo-pista {
+  display: flex;
+  gap: 40px;
+  white-space: nowrap;
+}
+
+.promo-item {
+  display: inline-flex;
+  align-items: center;
 }
 
 @keyframes marq {

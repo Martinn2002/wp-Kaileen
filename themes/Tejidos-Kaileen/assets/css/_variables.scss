@@ -102,3 +102,12 @@ h3, th, td{
     -webkit-appearance: none !important; 
     appearance: none !important;
 }
+
+.promo-item{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    a{
+        color: $color-negro;        
+    }
+
+}

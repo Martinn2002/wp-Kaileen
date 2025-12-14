@@ -716,119 +716,133 @@ select,
 
 
 /* =========================================================
-    FOOTER
+   FOOTER
 ========================================================= */
-
 footer {
   margin-top: 0;
   padding: 0;
 }
-
 .footer-movil {
   background-color: $color-verde;
   color: $color-negro;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  text-align: left;
 }
-
 .main-footer {
-  padding: 20px 20px 0px 20px;
+  padding: 20px;
 }
-
 .footer-enlaces {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  //margin-bottom: 10px;
 }
-
 .footer-enlaces a {
   text-decoration: none;
   color: $color-negro;
-  display: block;
   padding-bottom: 6px;
-  transition: color 0.3s ease;
 }
-
 .enlace {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 10px;
+  padding: 10px 0;
 }
-
-.card {
-  background-color: #c8dc7c;
-  color: black;
+.footer-faq {
+  display: flex;
+  flex-direction: column;
 }
-
 .p-frecuentes {
-  padding: 10px;
   display: flex;
   justify-content: space-between;
+  padding: 10px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
-
-
-
 .faq-icono {
   font-size: 20px;
   font-weight: 500;
-  padding-left: 8rem;
 }
-
-
-
-
-/* Logos e iconos */
+.faq-item {
+  margin: 12px 0;
+}
+.p-f {
+  text-decoration: none;
+  color: $color-negro;
+  display: block;
+  padding: 6px 0;
+}
+.card {
+  background-color:$color-verde-chillon;
+  color: $color-negro;
+}
 .footer-inferior {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-
+  padding: 20px 0;
 }
-
 .footer-logo {
-  height: 20%;
   width: auto;
-  margin: 20px 0px;
+  height: 40px;
 }
-
 .redsocial {
-  height: 40%;
-  color: black;
-
+  color: $color-negro;
+  font-size: 20px;
 }
-
-
-
-/* ======== FRANJA INFERIOR VERDE  ======== */
+.p-frecuentes a {
+  color: $color-negro;
+  text-decoration: none;
+}
+.p-frecuentes a:hover {
+  text-decoration: none;
+  color: $color-negro;
+}
+.p-frecuentes a:not(.collapsed) {
+  text-decoration: underline;
+  font-weight: 700;
+}
+/* footer inferior */
 .footer-copyright {
   width: 100%;
-  background-color: #c8dc7c;
-  text-align: center;
-  height: 30px;
-  padding: 5px;
-
-  justify-content: end;
+  background-color: $color-verde-chillon;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
 }
-
-
+/* responsive footer TABLET */
 @media (min-width: 768px) {
+  .main-footer {
+    padding: 30px;
+  }
   .footer-enlaces {
-    flex-direction: row;
     gap: 2rem;
   }
-
+}
+/* responsive footer DESKTOP */
+@media (min-width: 1024px) {
+  .main-footer {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  .footer-enlaces {
+    grid-column: 1 / 2;
+  }
   .footer-faq {
-    padding-bottom: 0;
+    grid-column: 2 / 3;
+  }
+  .footer-inferior {
+    grid-column: 3 / 4;
+    justify-content: flex-end;
+    gap: 1.5rem;
+    padding: 0;
+  }
+  .enlace,
+  .p-frecuentes {
+    border-bottom: none;
+    padding: 0;
   }
 }
-
-
-
-
 
 /* =========================================================
      ESTILOS PARA PC (DESKTOP)

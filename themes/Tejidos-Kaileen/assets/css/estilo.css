@@ -2419,4 +2419,7 @@ header {
 }
 .foto-sobremi {
   width: 10rem;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=estilo.css.map */

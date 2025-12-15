@@ -3,9 +3,17 @@
         <div class="main-footer">
             <!-- enlaces -->
             <div class="footer-enlaces">
-                <a href="<?php echo site_url('/personalizar'); ?>" class="enlace">Modelos a personalizar</a>
-                <a href="<?php echo site_url('/disponibles'); ?>" class="enlace">Disponibles</a>
+                <?php
+                wp_nav_menu(array(
+                    'theme_location' => 'menu_footer',
+                    'container'      => false,
+                    'menu_class'     => 'footer-menu d-flex flex-column gap-2',
+                    'fallback_cb'    => false,
+                    'depth'          => 1,
+                ));
+                ?>
             </div>
+
             <!-- faq -->
             <div class="footer-faq">
                 <div class="p-frecuentes">
@@ -48,9 +56,9 @@
                 </a>
 
                 <a href="https://www.instagram.com/tejidoskaileen/"
-                class="redsocial"
-                target="_blank"
-                rel="noopener">
+                    class="redsocial"
+                    target="_blank"
+                    rel="noopener">
                     <i class="bi bi-instagram"></i>
                 </a>
             </div>
@@ -58,7 +66,7 @@
         <p class="footer-copyright">© <?php echo date('Y'); ?> Sprint Web.</p>
     </footer>
 
-<?php wp_footer(); ?>
-</body>
-</html>
+    <?php wp_footer(); ?>
+    </body>
 
+    </html>

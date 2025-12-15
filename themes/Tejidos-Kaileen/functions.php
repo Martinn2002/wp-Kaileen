@@ -9,12 +9,18 @@ function kaileen_setup()
         'flex-height' => true,
     ]);
 
-
-    register_nav_menus([
-        'menu-principal' => __('Menú Principal', 'kaileen'),
-    ]);
 }
 add_action('after_setup_theme', 'kaileen_setup');
+
+function registrar_menus() {
+    register_nav_menus(array(
+        'menu_principal'  => 'Menú principal',
+        'menu_secundario' => 'Menú secundario',
+        'menu_movil'      => 'Menú móvil',
+        'menu_footer'     => 'Menú footer'
+    ));
+}
+add_action('after_setup_theme', 'registrar_menus');
 
 
 function kaileen_scripts()
@@ -142,3 +148,22 @@ add_action('pre_get_posts', function ($query) {
     $query->set('post_type', 'product');
   }
 });
+
+
+add_filter('nav_menu_link_attributes', function ($atts) {
+    if (isset($atts['class'])) {
+        $atts['class'] .= ' nav-link';
+    } else {
+        $atts['class'] = 'nav-link';
+    }
+    return $atts;
+}, 10);
+
+/* Agrega class="nav-item" a los <li> */
+add_filter('nav_menu_css_class', function ($classes) {
+    $classes[] = 'nav-item';
+    return $classes;
+}, 10);
+
+
+

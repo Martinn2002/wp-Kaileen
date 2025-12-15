@@ -46,7 +46,9 @@
     line-height: 1.4;
   }
 
-
+  .btn-compartir{
+    display: none;
+  }
 }
 
 @mixin mixin-tarjeta-comunidad {

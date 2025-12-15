@@ -1,0 +1,599 @@
+
+
+/* =========================================
+   1. Fondo y Contenedor General
+   ========================================= */
+
+body {
+    background-color: #F2F0E4; /* no me funciono la variablexd */
+    min-height: 100vh;
+}
+
+.perfil-usuario-contenedor {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 0 20px;
+    background-color: transparent;
+    box-shadow: none;
+    font-family: Arial, sans-serif;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* =========================================
+   2. Foto y Nombre de Usuario
+   ========================================= */
+
+.perfil-usuario-foto-wrap {
+    position: relative;
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+#perfil-usuario-foto-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.perfil-usuario-foto-wrap {
+    position: relative;
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 0.5rem;
+    border-radius: 50%;
+    overflow: visible;
+}
+
+
+#perfil-usuario-foto-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Botón de cambiar foto*/
+.perfil-usuario-cambiar-foto {
+    position: absolute;
+    bottom: 10px;
+    right: 12px;
+    transform: translate(25%, 25%); 
+    width: 40px;
+    height: 40px;
+    background-color: #79ac65;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    z-index: 10;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.perfil-usuario-cambiar-foto:hover {
+    transform: translate(25%, 25%) scale(1.1);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+}
+
+/* Ícono dentro del botón */
+.perfil-usuario-cambiar-foto i {
+    color: #fff; 
+    font-size: 18px;
+}
+
+
+.perfil-usuario-nombre {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: #333;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+/* =========================================
+   3. Estilos de las Tarjetas/Acordeones (Iconos y Contenedores)
+   ========================================= */
+
+.perfil-usuario-acordeon {
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(227, 18, 18, 0.05);
+    border: none !important;
+}
+
+.perfil-usuario-acordeon-encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    background-color: transparent;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.1s;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+}
+
+.perfil-usuario-acordeon-encabezado:hover {
+    background-color: #f8f8f8;
+}
+
+.perfil-usuario-acordeon-izq {
+    display: flex;
+    align-items: center;
+   
+}
+
+
+.perfil-usuario-icono {
+    width: 26px;
+    height: 26px;
+    margin-right: 20px !important; 
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    flex-shrink: 0;
+}
+
+
+.perfil-usuario-titulo {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.perfil-usuario-subtitulo {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 2px;
+}
+
+.perfil-usuario-flecha svg {
+    stroke: #777;
+    transition: transform 0.3s;
+}
+
+/* =========================================
+   4. CONTROL DE CONTENIDO Y ESPACIADO DEL ACORDEÓN 
+   ========================================= */
+
+.perfil-usuario-contenido {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    background-color: #ffffff;
+}
+
+.perfil-usuario-contenido-inner {
+    padding: 20px !important; 
+    border-top: 1px solid #eee;
+}
+
+.perfil-usuario-acordeon.active .perfil-usuario-contenido {
+    max-height: 1000px;
+}
+
+/* =========================================
+   5. Estilos del Formulario Cambiar Datos 
+   ========================================= */
+
+.perfil-datos-form {
+   
+    margin: 0;
+    padding: 0;
+}
+
+.perfil-usuario-grupo {
+    margin-bottom: 12px;
+}
+
+.perfil-usuario-input {
+    width: 100% !important; 
+    padding: 10px;
+    border: 1px solid #E9A7B2;
+    border-radius: 8px;
+    box-sizing: border-box !important; 
+    font-size: 0.95rem;
+    transition: border-color 0.2s;
+}
+
+.perfil-usuario-grupo label {
+    font-weight: 500;
+    margin-bottom: 3px;
+    font-size: 0.9rem;
+}
+
+.perfil-usuario-subtitle-small {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #444;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.perfil-usuario-linea-separadora {
+    margin: 15px 0;
+}
+
+
+.perfil-usuario-boton.perfil-datos-guardar,.perfil-boton-secundario {
+    display: block;
+    width: 100% !important;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #CDE57C;
+    color: #333;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    box-sizing: border-box !important; 
+}
+
+.perfil-usuario-boton.perfil-datos-guardar:hover {
+    background-color: #b7d16f;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.perfil-usuario-acordeon-encabezado {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 0.75rem 1rem; 
+    margin: 0;
+    border: none;
+    background: none;
+    width: 100%;
+    cursor: pointer;
+    text-align: left;
+}
+
+/* Contenedor izquierdo (icono + texto) */
+.perfil-usuario-acordeon-izq {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+}
+
+
+.perfil-usuario-icono img {
+    display: block;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+/* Título y subtítulo */
+.perfil-usuario-titulo {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.perfil-usuario-subtitulo {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+/* Flecha del acordeón */
+.perfil-usuario-flecha {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+
+.perfil-usuario-acordeon-encabezado[aria-expanded="true"] .perfil-usuario-flecha {
+    transform: rotate(180deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+   ESTILOS ESPECÍFICOS: Mini-Card de Compras 
+   ========================================= */
+
+.perfil-usuario-compra-card-img {
+    padding: 15px 0; 
+}
+
+
+.compra-titulo-principal {
+    font-size: 1.3rem; 
+    font-weight: 500;
+    margin: 0 0 15px 0; 
+    color: #000;
+}
+
+
+.compra-card-content {
+    display: flex;
+    align-items: flex-start; 
+    gap: 15px;
+}
+
+.compra-img-wrap {
+    width: 80px; 
+    height: 80px;
+    overflow: hidden;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.compra-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.compra-info-datos {
+    display: grid;
+    grid-template-columns: 1fr auto; 
+    gap: 5px;
+    align-items: center;
+    width: 100%;
+}
+
+.compra-fecha-dato {
+    grid-column: 1 / 2; 
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.compra-estado-wrap {
+    grid-column: 1 / 2; 
+    display: flex;
+    align-items: baseline;
+    font-size: 0.9rem;
+}
+
+.compra-estado-label {
+    color: #444;
+    margin-right: 5px;
+}
+
+.compra-estado {
+   
+    font-weight: bold;
+    color: #000; 
+    text-transform: none; 
+    padding: 0;
+    background: none;
+    margin-bottom: 0; 
+    font-size: 1rem;
+    display: inline;
+}
+
+.compra-precio {
+    grid-column: 1 / 2;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #000;
+    margin-top: 5px;
+}
+
+
+.compra-estado-wrap .compra-estado {
+    grid-column: 2 / 3;
+    text-align: right; 
+    align-self: flex-start;
+}
+
+.compra-estado {
+    
+    grid-column: 2 / 3;
+    text-align: right;
+    font-size: 1.1rem; 
+}
+.compra-estado-wrap {
+    display: contents; 
+}
+.compra-estado-label, .compra-estado {
+    display: block;
+}
+
+
+
+.compra-info-datos > .compra-estado-wrap {
+    grid-column: 1 / 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.compra-estado {
+    font-size: 1.1rem;
+}
+
+
+.compra-info-datos {
+    grid-template-columns: 1fr 1fr; 
+}
+
+.compra-fecha-dato {
+    grid-column: 1 / 2;
+    font-size: 0.95rem;
+}
+
+.compra-estado-wrap {
+    grid-column: 1 / 2;
+    justify-content: flex-start;
+}
+
+.compra-precio {
+    grid-column: 1 / 2; 
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+
+
+.compra-fecha-dato {
+    grid-column: 1 / 3;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+.compra-info-datos {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.compra-fecha-dato {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 0.9rem;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+.compra-estado-wrap {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: baseline;
+    margin-bottom: 5px;
+}
+
+.compra-estado-label {
+    font-size: 0.9rem;
+}
+
+.compra-estado {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.compra-precio {
+    margin-top: 5px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #000;
+}
+
+
+
+.compra-separador {
+    width: 100%;
+    height: 1px;
+    background-color: #ddd; 
+    margin-top: 20px;
+}
+
+
+
+.perfil-usuario-acordeon{
+    border: none !important;
+}
+
+
+.perfil-usuario-acordeon-encabezado {
+    border: none !important;
+    outline: none !important;
+    background: transparent;
+}
+
+.perfil-usuario-acordeon-encabezado:focus,
+.perfil-usuario-acordeon-encabezado:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+
+
+
+
+
+.perfil-usuario-boton.perfil-boton-secundario:hover {
+    background-color: #CDE57C;    
+    color: #333;                 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

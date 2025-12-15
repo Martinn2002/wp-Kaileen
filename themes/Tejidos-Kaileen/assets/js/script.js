@@ -82,32 +82,44 @@ if (buttons.length > 0) {
 
 
 
+document.addEventListener("DOMContentLoaded", () => {
 
+    const btnInfo = document.getElementById("boton-info-producto");
+    const btnPers = document.getElementById("boton-personalizacion-producto");
+    const btnMedidas = document.getElementById("boton-medidas-producto");
 
-const btnInfo = document.getElementById("boton-info-producto");
-const btnPers = document.getElementById("boton-personalizacion-producto");
+    const info = document.getElementById("contenido-info");
+    const pers = document.getElementById("contenido-personalizacion");
+    const medidas = document.getElementById("contenido-medidas");
 
-const info = document.getElementById("contenido-info");
-const pers = document.getElementById("contenido-personalizacion");
+    function ocultarTodo() {
+        info?.classList.add("d-none");
+        pers?.classList.add("d-none");
+        medidas?.classList.add("d-none");
 
-btnInfo.addEventListener("click", () => {
-    btnInfo.classList.add("active");
-    btnPers.classList.remove("active");
+        btnInfo?.classList.remove("active");
+        btnPers?.classList.remove("active");
+        btnMedidas?.classList.remove("active");
+    }
 
-    info.classList.remove("d-none");
-    info.classList.add("contenido-activo");
+    btnInfo?.addEventListener("click", () => {
+        ocultarTodo();
+        btnInfo.classList.add("active");
+        info.classList.remove("d-none");
+    });
 
-    pers.classList.add("d-none");
-});
+    btnPers?.addEventListener("click", () => {
+        ocultarTodo();
+        btnPers.classList.add("active");
+        pers.classList.remove("d-none");
+    });
 
-btnPers.addEventListener("click", () => {
-    btnPers.classList.add("active");
-    btnInfo.classList.remove("active");
+    btnMedidas?.addEventListener("click", () => {
+        ocultarTodo();
+        btnMedidas.classList.add("active");
+        medidas.classList.remove("d-none");
+    });
 
-    pers.classList.remove("d-none");
-    pers.classList.add("contenido-activo");
-
-    info.classList.add("d-none");
 });
 
 

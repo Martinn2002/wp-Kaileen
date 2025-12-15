@@ -1,13 +1,13 @@
 <?php
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 global $product;
 
-if ( empty( $product ) || ! is_a( $product, 'WC_Product' ) ) {
-    $product = wc_get_product( get_the_ID() );
+if (empty($product) || ! is_a($product, 'WC_Product')) {
+    $product = wc_get_product(get_the_ID());
 }
 
-setup_postdata( get_post() );
+setup_postdata(get_post());
 
 get_header();
 ?>
@@ -18,10 +18,10 @@ get_header();
         <!-- BOTÓN VOLVER -->
         <div class="row mt-3 mb-1">
             <div class="col-12">
-                <?php 
-                    $back = wp_get_referer() ? wp_get_referer() : home_url();
+                <?php
+                $back = wp_get_referer() ? wp_get_referer() : home_url();
                 ?>
-                <a href="<?php echo esc_url( $back );?>" class="btn-volver">
+                <a href="<?php echo esc_url($back); ?>" class="btn-volver">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/iconos/chevron-left.svg" alt="volver">
                 </a>
             </div>
@@ -40,29 +40,24 @@ get_header();
             <div class="col-md-6">
                 <div class="galeria-producto">
                     <?php
-                        do_action( 'woocommerce_before_single_product_summary' );
+                    do_action('woocommerce_before_single_product_summary');
                     ?>
                 </div>
             </div>
 
-            <!-- INFORMACIÓN + PERSONALIZACIÓN -->
+            <!-- INFORMACIÓN -->
             <div class="col-md-6">
 
-                <!-- condicional de categorias para mostrar el "personalizable" -->
-                <?php
-                $tiene_modelo     = has_term( 'modelo', 'product_cat', $product->get_id() );
-                $tiene_disponible = has_term( 'disponible', 'product_cat', $product->get_id() );
-
-                $es_personalizable = $tiene_modelo && ! $tiene_disponible;
-                ?>
-
                 <!-- TÍTULO + COMPARTIR -->
-                <div class="row">
+                <div class="row row-single mt-1">
                     <hr>
+
                     <div class="col-8">
-                        <h2>
-                            <?php echo $es_personalizable ? 'Personaliza tu modelo' : 'Producto disponible'; ?>
-                        </h2>
+                        <?php if (has_term('modelo', 'product_cat')) : ?>
+                            <h2>Personaliza tu Modelo</h2>
+                        <?php else : ?>
+                            <h2><?php echo $product->get_price_html(); ?></h2>
+                        <?php endif; ?>
                     </div>
 
                     <div class="col-4 d-flex justify-content-center">
@@ -75,59 +70,79 @@ get_header();
                 <!-- BOTONES TABS -->
                 <div class="row row-boton-producto mt-3">
                     <div class="col-6">
-                        <button id="boton-info-producto" class="btn boton-producto-info p-mediano active">
+                        <button
+                            id="boton-info-producto"
+                            class="btn boton-producto-info p-mediano active">
                             Información
                         </button>
                     </div>
+
                     <div class="col-6">
-                        <?php if ( $es_personalizable ) : ?>
-                            <button id="boton-personalizacion-producto" class="btn boton-producto-info p-mediano">
+                        <?php if (has_term('modelo', 'product_cat')) : ?>
+                            <button
+                                id="boton-personalizacion-producto"
+                                class="btn boton-producto-info p-mediano">
                                 Personalización
+                            </button>
+                        <?php else : ?>
+                            <button
+                                id="boton-medidas-producto"
+                                class="btn boton-producto-info p-mediano">
+                                Medidas
                             </button>
                         <?php endif; ?>
                     </div>
                 </div>
 
-                <!-- CONTENEDOR INFO / PERSONALIZACIÓN -->
+                <!-- CONTENIDO -->
                 <div id="info-producto" class="row">
 
-                    <!-- CONTENIDO INFO -->
-                    <div id="contenido-info" class="contenido-activo">
-                        <?php
-                            // Descripción corta
-                            echo '<div class="descripcion-corta">';
-                            the_excerpt();
-                            echo '</div>';
-                        ?>
+                    <!-- INFO -->
+                    <div id="contenido-info">
+                        <div class="descripcion-corta mt-1">
+                            <?php the_excerpt(); ?>
+                        </div>
+                    </div>
 
-                        <!-- BOTÓN AGREGAR AL CARRITO (SOLO DISPONIBLES) -->
-                        <?php if ( ! $es_personalizable ) : ?>
+                    <!-- PERSONALIZACIÓN -->
+                    <?php if (has_term('modelo', 'product_cat')) : ?>
+                        <div id="contenido-personalizacion" class="d-none">
                             <div class="mt-1 boton-carrito-producto d-flex text-center">
                                 <?php woocommerce_template_single_add_to_cart(); ?>
                             </div>
-                        <?php endif; ?>
-                    </div>
+                        </div>
+                    <?php endif; ?>
 
-                    <!-- CONTENIDO PERSONALIZACIÓN - SOLO YITH -->
-                    <?php if ( $es_personalizable ) : ?>
-                        <div id="contenido-personalizacion" class="d-none">
+                    <!-- MEDIDAS -->
+                    <?php if (! has_term('modelo', 'product_cat')) : ?>
+                        <div id="contenido-medidas" class="d-none">
+                            <div class="medidas-producto">
 
-                            <?php
-                                /**
-                                 * Formulario de personalización YITH + botón
-                                 */
-                                do_action( 'woocommerce_before_add_to_cart_form' );
-                                woocommerce_template_single_add_to_cart();
-                                do_action( 'woocommerce_after_add_to_cart_form' );
-                            ?>
+                                <?php
+                                $talla   = $product->get_attribute('pa_talla');
+                                $medidas = $product->get_attribute('pa_medidas');
+                                ?>
 
+                                <?php if ($talla || $medidas) : ?>
+
+                                    <?php if ($talla) : ?>
+                                        <p><strong>Talla:</strong> <?php echo esc_html($talla); ?></p>
+                                    <?php endif; ?>
+
+                                    <?php if ($medidas) : ?>
+                                        <p><strong>Medidas:</strong> <?php echo esc_html($medidas); ?></p>
+                                    <?php endif; ?>
+
+                                <?php else : ?>
+                                    <p class="mt-1">No hay medidas específicas para este producto.</p>
+                                <?php endif; ?>
+
+                            </div>
                         </div>
                     <?php endif; ?>
 
                 </div>
-
             </div>
-
         </div>
     </div>
 </main>

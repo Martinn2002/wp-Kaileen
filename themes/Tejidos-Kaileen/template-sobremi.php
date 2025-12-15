@@ -25,7 +25,7 @@ get_header();
         <div class="row">
             <div class="col-6">
                 <a href="<?php echo esc_url( get_term_link('Modelo', 'product_cat') ); ?>" class="position-relative d-block text-white text-decoration-none">
-                     <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/perchero.jpeg' ); ?>" class="img-fluid">
+                     <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/perchero.jpeg' ); ?>" class="img-enlace">
                         <span class="position-absolute bottom-0 start-0 p-3 bg-dark bg-opacity-50">
                         Catálogo</span>
                 </a>
@@ -33,7 +33,7 @@ get_header();
              </div>
              <div class="col-6">
                 <a href="<?php echo esc_url( get_term_link('Disponibles', 'product_cat') ); ?>" class="position-relative d-block text-white text-decoration-none">
-                     <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/tejidos-stand.jpeg' ); ?>" class="img-fluid">
+                     <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/tejidos-stand.jpeg' ); ?>" class="img-enlace m-5">
                         <span class="position-absolute bottom-0 start-0 p-3 bg-dark bg-opacity-50">
                         Disponibles</span>
                  </a>

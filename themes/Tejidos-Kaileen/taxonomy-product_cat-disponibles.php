@@ -59,11 +59,11 @@
 
         <div class="row">
             <ul class="paginacion d-flex justify-content-center">
-                <li><a class="p-btn" href="#"><img src="assets/img/iconos/flecha-izquierda.png" alt="flecha izquierda"></a></li>
+                <li><a class="p-btn" href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/iconos/flecha-izquierda.png" alt="flecha izquierda"></a></li>
                 <li><a class="p-btn active" href="#">1</a></li>
                 <li><a class="p-btn" href="#">2</a></li>
                 <li><a class="p-btn" href="#">3</a></li>
-                <li><a class="p-btn" href="#"><img src="assets/img/iconos/flecha-derecha.png" alt="flecha derecha"></a></li>
+                <li><a class="p-btn" href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/iconos/flecha-derecha.png" alt="flecha derecha"></a></li>
             </ul>
         </div>
 

@@ -1222,7 +1222,7 @@ select option,
    FOOTER
 ========================================================= */
 footer {
-  margin-top: 0;
+  margin-top: 64px;
   padding: 0;
 }
 
@@ -1675,115 +1675,100 @@ footer {
 }
 
 /* ================================
-    LOGIN / REGISTER
+    iniciar sesión + registrase
 ================================ */
-.contenedor-login {
-  max-width: 450px;
+.login-page {
+  font-family: "Inter", sans-serif;
+  background-color: #D1E0A9;
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 15px;
 }
 
-/* TABS */
-.login-tabs .tab-btn {
-  background: #fff;
+.login-card {
+  width: 100%;
+  max-width: 340px;
+  background-color: rgba(226, 226, 226, 0.4);
+  border-radius: 14px;
+  padding: 28px 22px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
   border: 1px solid #C9D997;
-  padding: 10px 22px;
-  border-radius: 30px;
-  font-weight: 600;
-  color: #171D07;
-  transition: 0.3s ease;
-}
-.login-tabs .tab-btn.active {
-  background: #C4E079;
-  border-color: #C4E079;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-}
-.login-tabs .tab-btn:hover {
-  cursor: pointer;
-  background: rgb(205.1181818182, 228.7909090909, 141.7090909091);
 }
 
-/* FORMS */
-.form-login,
-.form-register {
-  background: #fff;
-  border: 1px solid #C9D997;
-  border-radius: 22px;
-  padding: 28px 24px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-.form-login h2,
-.form-register h2 {
-  font-weight: 700;
-}
-.form-login .input-group-text,
-.form-register .input-group-text {
-  background: #C4E079;
-  border: none;
-  color: #171D07;
-}
-.form-login .form-control,
-.form-register .form-control {
-  border-radius: 12px;
-  border: 1px solid #C9D997;
-  color: #171D07;
-}
-.form-login .form-control:focus,
-.form-register .form-control:focus {
-  border-color: #C4E079;
-  box-shadow: 0 0 0 3px rgba(196, 224, 121, 0.35);
-}
-.form-login .link-recuperar,
-.form-register .link-recuperar {
-  font-size: 0.9rem;
-  color: #EF9AB9;
-  text-decoration: none;
-}
-.form-login .link-recuperar:hover,
-.form-register .link-recuperar:hover {
-  text-decoration: underline;
+.login-title {
+  font-family: "Inter", sans-serif;
+  text-align: left;
+  margin-bottom: 22px;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  line-height: 150%;
 }
 
-#billing_address_2, #billing_address_2_field {
-  margin: 0px;
-  display: none;
+.form-group {
+  margin-bottom: 18px;
 }
-
-.validate-required {
-  margin-bottom: 30px;
-}
-
-/* btn locales login */
-.form-login .btn-principal,
-.form-register .btn-principal {
-  border: none;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  outline: none;
-}
-
-.form-login .btn-principal:focus,
-.form-register .btn-principal:focus,
-.form-login .btn-principal:active,
-.form-register .btn-principal:active {
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
-  transform: translateY(0);
-}
-
-.login-tabs .tab-btn.btn-principal {
-  padding: 8px 22px;
-  border-radius: 30px;
-}
-
-.login-tabs .tab-btn.active {
-  background: #C4E079;
-  border-color: #C4E079;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-}
-
-.form-login .btn-principal,
-.form-register .btn-principal {
+.form-group label {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  margin-bottom: 6px;
   display: block;
-  margin: 0 auto;
-  width: -moz-fit-content;
-  width: fit-content;
+}
+
+.input-icon {
+  position: relative;
+}
+.input-icon input {
+  width: 100%;
+  padding: 6px 0 6px 12px;
+  border-radius: 15px;
+  border: 1px solid #EF9AB9;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+.input-icon input:focus {
+  outline: none;
+  border-color: #EF9AB9;
+  box-shadow: none;
+}
+
+.link-recuperar {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 15px;
+  color: #171D07;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.link-recuperar:hover {
+  opacity: 0.8;
+  color: #EF9AB9;
+}
+
+.btn-login {
+  width: 100%;
+  border: none;
+  border-radius: 30px;
+  padding: 10px;
+  font-size: 0.95rem;
+  background: #C4E079;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+.btn-login:hover {
+  background: rgb(203.2945454545, 227.8327272727, 137.5672727273);
+}
+
+.login-helper {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 14px;
+  color: #171D07;
 }
 
 /* ================================
@@ -2376,13 +2361,6 @@ header {
   padding: 70px 0px;
 }
 
-.imagen-sobre-mi {
-  width: 100%;
-  max-height: 300px !important;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
 .img-banner-perso {
   height: 20vh;
   -o-object-fit: contain;
@@ -2418,8 +2396,13 @@ header {
   }
 }
 .foto-sobremi {
-  width: 10rem;
+  width: 100%;
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.img-enlace {
+  width: 100%;
+  max-height: 300px;
 }/*# sourceMappingURL=estilo.css.map */

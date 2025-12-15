@@ -15,11 +15,6 @@
             <div class="container-fluid d-flex flex-column align-items-center">
             <!-- menu superior -->
                 <div class="d-flex align-items-center justify-content-between w-100">
-                    <!-- btn idioma -->
-                    <button class="btn btn-idioma d-lg-none">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-traductor.png" alt="Idioma" class="icon-mobile">
-                    </button>
-
                     <!-- fin btn idioma -->
                     <a class="navbar-brand m-0 mx-auto mx-lg-0" href="<?php echo home_url('/'); ?>">
                         <?php 

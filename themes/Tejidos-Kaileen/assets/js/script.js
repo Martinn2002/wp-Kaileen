@@ -168,3 +168,11 @@ document.addEventListener("DOMContentLoaded", () => {
         boton.classList.add("btn", "btn-principal"); // Asigna las nuevas
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    document
+        .querySelectorAll('.yith-wapo-option-value')
+        .forEach(select => {
+            select.style.width = "100%";
+        });
+});

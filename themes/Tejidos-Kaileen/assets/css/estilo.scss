@@ -659,6 +659,10 @@ h2+span {
   background-color: $color-background;
 }
 
+.options{
+  width: 100% !important;
+}
+
 select,
 .input-text,
 .select2-selection__rendered {
@@ -2530,19 +2534,6 @@ header {
     color: #333;                 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.qty {
+  display: none !important;
+}

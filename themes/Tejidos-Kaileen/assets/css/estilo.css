@@ -1089,6 +1089,10 @@ h2 + span {
   background-color: #F2F0E4;
 }
 
+.options {
+  width: 100% !important;
+}
+
 select,
 .input-text,
 .select2-selection__rendered {
@@ -2930,4 +2934,8 @@ header {
 .perfil-usuario-boton.perfil-boton-secundario:hover {
   background-color: #CDE57C;
   color: #333;
+}
+
+.qty {
+  display: none !important;
 }/*# sourceMappingURL=estilo.css.map */

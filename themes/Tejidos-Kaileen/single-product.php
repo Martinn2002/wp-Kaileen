@@ -140,7 +140,15 @@ get_header();
                             </div>
                         </div>
                     <?php endif; ?>
-
+                
+                </div>
+                <div class="row">
+  
+                    <?php if (! has_term('modelo', 'product_cat')) : ?>
+                        <div class="mt-3 boton-carrito-producto d-flex text-center">
+                            <?php woocommerce_template_single_add_to_cart(); ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

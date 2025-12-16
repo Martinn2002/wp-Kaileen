@@ -32,11 +32,6 @@
                 <!-- ICONOS DESKTOP -->
                 <div class="d-none d-lg-flex align-items-center gap-3 ms-auto icons-desktop">
 
-                    <!-- IDIOMA (si después metes WPML o Polylang) -->
-                    <a href="#">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icono-traductor.png" alt="Idioma">
-                    </a>
-
                     <!-- CARRITO -->
                     <?php if ( class_exists('WooCommerce') ) : ?>
                         <a href="<?php echo esc_url( wc_get_cart_url() ); ?>">

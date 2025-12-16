@@ -14,8 +14,8 @@
     ?>
       <p class="p-grande bold promo-item">No hay fechas vigentes.</p>
     <?php
-      return;
     endif;
+
 
     $tz     = wp_timezone();
     $ahora  = new DateTime('now', $tz);

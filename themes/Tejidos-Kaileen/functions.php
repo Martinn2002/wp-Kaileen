@@ -8,11 +8,11 @@ function kaileen_setup()
         'flex-width'  => true,
         'flex-height' => true,
     ]);
-
 }
 add_action('after_setup_theme', 'kaileen_setup');
 
-function registrar_menus() {
+function registrar_menus()
+{
     register_nav_menus(array(
         'menu_principal'  => 'Menú principal',
         'menu_secundario' => 'Menú secundario',
@@ -113,40 +113,40 @@ add_action('after_setup_theme', function () {
 });
 
 
-if (current_user_can('administrator')) {
-    return;
-} else {
-    add_action('admin_menu', function () {
-        remove_menu_page('edit.php'); // Entradas
-        remove_menu_page('edit-comments.php'); // Comentarios
-        remove_menu_page('themes.php'); // Apariencia
-        remove_menu_page('plugins.php'); // Plugins
-        remove_menu_page('tools.php'); // Herramientas
-        remove_menu_page('options-general.php'); // Ajustes
-    });
-}
+add_action('admin_menu', function () {
 
-add_action('pre_get_posts', function ($query) {
+    if (current_user_can('administrator')) {
+        return;
+    }
 
-  if (
-    !is_admin() ||
-    !$query->is_main_query() ||
-    current_user_can('administrator')
-  ) {
-    return;
-  }
-
-  // Solo Gestor de la tienda
-  if (current_user_can('manage_woocommerce')) {
-    $query->set('post__not_in', [8 , 9, 10, 11, 3, 7]);
-  }
-
+    remove_menu_page('edit.php'); // Entradas
+    remove_menu_page('edit-comments.php'); // Comentarios
+    remove_menu_page('themes.php'); // Apariencia
+    remove_menu_page('plugins.php'); // Plugins
+    remove_menu_page('tools.php'); // Herramientas
+    remove_menu_page('options-general.php'); // Ajustes
 });
 
 add_action('pre_get_posts', function ($query) {
-  if (!is_admin() && $query->is_main_query() && $query->is_search()) {
-    $query->set('post_type', 'product');
-  }
+
+    if (
+        !is_admin() ||
+        !$query->is_main_query() ||
+        current_user_can('administrator')
+    ) {
+        return;
+    }
+
+    // Solo Gestor de la tienda
+    if (current_user_can('manage_woocommerce')) {
+        $query->set('post__not_in', [8, 9, 10, 11, 3, 7]);
+    }
+});
+
+add_action('pre_get_posts', function ($query) {
+    if (!is_admin() && $query->is_main_query() && $query->is_search()) {
+        $query->set('post_type', 'product');
+    }
 });
 
 
@@ -164,6 +164,3 @@ add_filter('nav_menu_css_class', function ($classes) {
     $classes[] = 'nav-item';
     return $classes;
 }, 10);
-
-
-

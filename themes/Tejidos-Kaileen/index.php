@@ -9,79 +9,69 @@
 
     <?php
     $page = get_page_by_path('ubicacion');
-
-    if (!$page || !have_rows('ingresa_un_dia', $page->ID)) :
-    ?>
-      <p class="p-grande bold promo-item">No hay fechas vigentes.</p>
-    <?php
-    endif;
-
-
-    $tz     = wp_timezone();
-    $ahora  = new DateTime('now', $tz);
+    $tz   = wp_timezone();
+    $ahora = new DateTime('now', $tz);
     $mostrar_algo = false;
 
-    while (have_rows('ingresa_un_dia', $page->ID)) :
-      the_row();
+    if ($page && have_rows('ingresa_un_dia', $page->ID)) :
 
-      $lugar  = get_sub_field('nombre_del_lugar');
-      $maps   = get_sub_field('ingresar_link_de_google_maps');
-      $inicio = get_sub_field('dia-hora-1'); // datetime
-      $fin    = get_sub_field('dia-hora-2'); // SOLO hora
+      while (have_rows('ingresa_un_dia', $page->ID)) :
+        the_row();
 
-      if (!$lugar || !$inicio) continue;
+        $lugar  = get_sub_field('nombre_del_lugar');
+        $maps   = get_sub_field('ingresar_link_de_google_maps');
+        $inicio = get_sub_field('dia-hora-1');
+        $fin    = get_sub_field('dia-hora-2');
 
-      try {
-        // Inicio REAL del evento
-        $inicio_dt = new DateTime($inicio, $tz);
+        if (!$lugar || !$inicio) continue;
 
-        // Fin REAL (misma fecha del inicio + hora)
-        if ($fin) {
-          $fecha_base = $inicio_dt->format('Y-m-d');
-          $fin_dt = new DateTime("$fecha_base $fin", $tz);
-        } else {
-          $fin_dt = null;
+        try {
+          $inicio_dt = new DateTime($inicio, $tz);
+
+          if ($fin) {
+            $fecha_base = $inicio_dt->format('Y-m-d');
+            $fin_dt = new DateTime("$fecha_base $fin", $tz);
+          } else {
+            $fin_dt = null;
+          }
+        } catch (Exception $e) {
+          continue;
         }
-      } catch (Exception $e) {
-        continue;
-      }
 
-      // ❌ Evento completamente pasado
-      if ($fin_dt && $fin_dt < $ahora) continue;
+        if ($fin_dt && $fin_dt < $ahora) continue;
+        if (!$fin_dt && $inicio_dt < $ahora) continue;
 
-      // ❌ Evento sin fin y ya pasó
-      if (!$fin_dt && $inicio_dt < $ahora) continue;
-
-      $mostrar_algo = true;
+        $mostrar_algo = true;
     ?>
 
-      <p class="p-grande bold promo-item">
-
-        <?php if ($maps): ?>
-          <a href="<?php echo esc_url($maps); ?>" target="_blank" rel="noopener">
+        <p class="p-grande bold promo-item">
+          <?php if ($maps): ?>
+            <a href="<?php echo esc_url($maps); ?>" target="_blank" rel="noopener">
+              <?php echo esc_html($lugar); ?>
+            </a>
+          <?php else: ?>
             <?php echo esc_html($lugar); ?>
-          </a>
-        <?php else: ?>
-          <?php echo esc_html($lugar); ?>
-        <?php endif; ?>
+          <?php endif; ?>
 
-        — <?php echo esc_html(wp_date('l d F · H:i', $inicio_dt->getTimestamp())); ?>
+          — <?php echo esc_html(wp_date('l d F · H:i', $inicio_dt->getTimestamp())); ?>
 
-        <?php if ($fin_dt): ?>
-          a <?php echo esc_html(wp_date('H:i', $fin_dt->getTimestamp())); ?>
-        <?php endif; ?>
+          <?php if ($fin_dt): ?>
+            a <?php echo esc_html(wp_date('H:i', $fin_dt->getTimestamp())); ?>
+          <?php endif; ?>
+        </p>
 
-      </p>
+      <?php endwhile;
 
-    <?php endwhile;
+      if (!$mostrar_algo): ?>
+        <p class="p-grande bold promo-item">No hay eventos vigentes.</p>
+      <?php endif;
 
-    if (!$mostrar_algo): ?>
-      <p class="p-grande bold promo-item">No hay eventos vigentes.</p>
+    else : ?>
+      <p class="p-grande bold promo-item">No hay fechas vigentes.</p>
     <?php endif; ?>
 
   </div>
 </div>
-
 
 <div class="container">
   <main>

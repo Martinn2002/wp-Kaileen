@@ -1,0 +1,192 @@
+/* ============================================================
+   ESTILO GENERAL
+============================================================ */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #F4F1E5;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/* Contenedor general del carrito */
+.contenedor-carrito {
+  width: 100%;
+  max-width: 480px;
+  padding: 1.5rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+  box-sizing: border-box;
+}
+
+/* ============================================================
+   ENCABEZADO
+============================================================ */
+.encabezado-carrito {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.decoracion-linea {
+  width: 4px;
+  height: 40px;
+  background-color: #2E3B1F;
+  border-radius: 2px;
+}
+
+.titulo-carrito {
+  font-size: 1.8rem;
+  color: #2E3B1F;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ============================================================
+   PRODUCTOS
+============================================================ */
+.lista-productos {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card-producto {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #C8DA95;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  padding: 1rem;
+  transition: 0.3s ease;
+}
+
+.card-producto:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.imagen-producto {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 1rem;
+}
+
+.info-producto {
+  flex: 1;
+}
+
+.cabecera-producto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nombre-producto {
+  font-size: 1rem;
+  color: #2E3B1F;
+  font-weight: 600;
+  margin: 0;
+}
+
+.boton-eliminar {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #2E3B1F;
+  transition: 0.3s ease;
+  line-height: 1;
+}
+
+.boton-eliminar:hover {
+  color: #A33B3B;
+}
+
+.descripcion-producto {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 4px 0;
+}
+
+.precio-producto {
+  font-size: 1rem;
+  color: #2E3B1F;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+/* ============================================================
+   TOTAL
+============================================================ */
+.total-carrito {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  color: #555;
+  text-align: right;
+}
+
+.total-carrito .monto-total {
+  color: #2E3B1F;
+  font-weight: 700;
+  margin-left: 4px;
+}
+
+/* ============================================================
+   BOTÓN PAGAR
+============================================================ */
+.contenedor-boton {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.boton-pagar {
+  display: inline-block;
+  background-color: #D2E676;
+  color: #2E3B1F;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 0.9rem 3rem;
+  border-radius: 40px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+}
+
+.boton-pagar:hover {
+  background-color: #C9D97A;
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media (max-width: 480px) {
+
+  .titulo-carrito {
+    font-size: 1.6rem;
+  }
+
+  .imagen-producto {
+    width: 70px;
+    height: 70px;
+  }
+
+  .boton-pagar {
+    width: 100%;
+  }
+}
+
+/*  quitar los bordes de Inputs de cantidad WooCommerce */
+input.qty,
+.woocommerce-cart .quantity input[type="number"] {
+    border: none;           
+    background: transparent;  
+    box-shadow: none;        
+    -moz-appearance: textfield; 
+    outline: none;          
+}
+
